@@ -73,83 +73,77 @@ export default {
 </script>
 
 <style scoped>
+/* Sidebar container */
 .nav {
   position: fixed;
-  right: 30px;
+  right: 40px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 999;
 }
 
-.nav-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
+/* List items spacing */
 .nav-menu li {
-  position: relative;
-  margin: 24px 0; /* Increase space between dots */
+  margin: 24px 0; /* make dots further apart */
+  list-style: none;
 }
 
-/* Dot style */
+/* Base dot */
 .dot {
   display: block;
-  width: 14px;
-  height: 14px;
-  background: #aaa;
+  width: 12px;
+  height: 12px;
+  background: #9d9d9d;
   border-radius: 50%;
   position: relative;
   transition: all 0.3s ease;
-  cursor: pointer; /* Pointer cursor */
+  cursor: pointer;
 }
 
-/* Hover effect */
+/* Hover effect: scale and lighten */
 .dot:hover {
-  transform: scale(1.2);
-  background: #ccc;
+  transform: scale(1.3);
+  background: #cccccc;
 }
 
-/* Active effect (hollow ring) */
+/* Active state outer ring */
 .dot.active {
   background: transparent;
-  border: 2px solid #9dd8f8;
+  border: 2px solid #9d8f8f;
 }
 
-/* Ring around active dot */
+/* Inner ring effect like Snapshot */
 .dot.active::after {
   content: '';
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   position: absolute;
   top: 50%;
-  right: -3px;
+  right: -5px;
   transform: translateY(-50%);
-  border: 2px solid #9dd8f8;
+  border: 2px solid #9d8f8f;
   border-radius: 50%;
   box-sizing: border-box;
 }
 
-/* Label bubble */
+/* Label bubble style */
 .dot span {
   position: absolute;
   top: 50%;
-  right: 40px;
+  right: 32px;
   transform: translateY(-50%);
   opacity: 0;
   pointer-events: none;
   background: rgba(0, 0, 0, 0.7);
   color: #fff;
   padding: 6px 14px;
-  border-radius: 5px;
-  font-size: 13px;
+  border-radius: 4px;
+  font-size: 12px;
   white-space: nowrap;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  letter-spacing: 0.5px;
+  transition: opacity 0.3s ease 0.2s;
 }
 
-/* Arrow bubble tail */
+/* Triangle arrow tail on label */
 .dot span::after {
   content: '';
   position: absolute;
@@ -163,10 +157,9 @@ export default {
   border-left: 6px solid rgba(0, 0, 0, 0.7);
 }
 
-/* Show label on hover or active */
+/* Show label when hovered or active */
 .dot:hover span,
 .dot.active span {
   opacity: 1;
 }
-
 </style>
