@@ -424,7 +424,7 @@
                     <div class="col-md-3 d-flex ftco-animate fadeInUp ftco-animated">
                         <div class="align-self-stretch box text-center p-4">
                             <div class="icon d-flex align-items-center justify-content-center">
-                                <span class="icon-map-signs"></span>
+                                <span class="fas fa-map-marker-alt"></span>
                             </div>
                             <div>
                                 <h3 class="mb-4">Address</h3>
@@ -435,7 +435,7 @@
                     <div class="col-md-3 d-flex ftco-animate fadeInUp ftco-animated">
                         <div class="align-self-stretch box text-center p-4">
                             <div class="icon d-flex align-items-center justify-content-center">
-                                <span class="icon-phone2"></span>
+                                <span class="fas fa-phone"></span>
                             </div>
                             <div>
                                 <h3 class="mb-4">Contact Number</h3>
@@ -446,7 +446,7 @@
                     <div class="col-md-3 d-flex ftco-animate fadeInUp ftco-animated">
                         <div class="align-self-stretch box text-center p-4">
                             <div class="icon d-flex align-items-center justify-content-center">
-                                <span class="icon-paper-plane"></span>
+                                <span class="fas fa-paper-plane"></span>
                             </div>
                             <div>
                                 <h3 class="mb-4">Email Address</h3>
@@ -457,7 +457,7 @@
                     <div class="col-md-3 d-flex ftco-animate fadeInUp ftco-animated">
                         <div class="align-self-stretch box text-center p-4">
                             <div class="icon d-flex align-items-center justify-content-center">
-                                <span class="icon-globe"></span>
+                                <span class="fas fa-globe"></span>
                             </div>
                             <div>
                                 <h3 class="mb-4">Website</h3>

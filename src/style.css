@@ -1301,3 +1301,27 @@ body {
   background-color: #000; /* black background if you want */
   color: #fff; /* optional: white text */
 }
+
+.ftco-footer {
+    font-size: 16px;
+    padding: 7em 0px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ftco-footer-social li {
+    display: inline-block;
+    list-style: none;
+    margin: 0px 10px 0px 0px;
+}
+
+.ftco-footer-social li a span {
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.icon-instagram:before {
+    content: "\f16d";
+}
