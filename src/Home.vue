@@ -117,7 +117,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import Sidebar from '../components/Sidebar.vue';
 import PortfolioItem from '../components/PortfolioItem.vue';
 
@@ -130,10 +130,41 @@ export default {
       '/work3.jpg',
       '/work4.jpg'
     ]);
-    return { images };
+
+    // 👇 Fade-in effect on scroll
+    onMounted(() => {
+      const sections = document.querySelectorAll('section');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      sections.forEach((section) => observer.observe(section));
+    });
+
+    // 👇 Optional: Smooth scroll trigger if needed here too
+    const scrollTo = (id) => {
+      const el = document.getElementById(id);
+      if (el) {
+        const yOffset = -20;
+        const y =
+          el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    };
+
+    return { images, scrollTo };
   }
 };
 </script>
+
 
 <style scoped>
 /* Add your scoped styles here if needed */

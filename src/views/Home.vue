@@ -1,7 +1,7 @@
 <template>
     <main class="home bg-black text-white overflow-x-hidden">
         <!-- Hero -->
-        <section class="hero-section">
+        <section id="home" class="hero-section">
             <div class="overlay"></div>
 
             <div class="hero-content">
@@ -516,7 +516,27 @@
 </template>
 
 <script setup>
-// Add any script or form logic here if needed
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  // Fade-in on scroll
+  const sections = document.querySelectorAll('section');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+});
 </script>
 
 <style scoped>
@@ -622,5 +642,16 @@
     padding: 20px;
     border-left: 4px solid white;
     margin-top: 40px;
+}
+
+
+.content section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+.content section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>

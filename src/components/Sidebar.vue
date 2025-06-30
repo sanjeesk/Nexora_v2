@@ -2,11 +2,12 @@
   <nav id="navbar" class="nav">
     <ul class="nav-menu">
       <li>
-        <a href="#home" class="dot active" data-scroll="home"><span>Home</span></a>
+<a href="#home" class="dot" data-scroll="home" @click.prevent="scrollTo('home')"><span>Home</span></a>
       </li>
       <li>
-        <a href="#about" class="dot" data-scroll="about"><span>About</span></a>
-      </li>
+<a href="#home" class="dot" data-scroll="home" @click.prevent="scrollTo('home')">
+  <span>Home</span>
+</a>      </li>
       <li>
         <a href="#services" class="dot" data-scroll="services"><span>Services</span></a>
       </li>
@@ -30,35 +31,44 @@ export default {
     window.removeEventListener('scroll', this.onScroll);
   },
   methods: {
-    onScroll() {
-  const sections = ["home", "about", "work", "contact"];
-  const scrollPosition = window.scrollY + 1; // Adjust for top edge
-
-  let activated = false;
-
-  for (let id of sections) {
+methods: {
+  scrollTo(id) {
     const el = document.getElementById(id);
     if (el) {
-      const offsetTop = el.offsetTop;
-      const offsetBottom = offsetTop + el.offsetHeight;
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  },
 
-      if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-        document.querySelectorAll(".dot").forEach((dot) => dot.classList.remove("active"));
-        const activeDot = document.querySelector(`.dot[data-scroll="${id}"]`);
-        if (activeDot) activeDot.classList.add("active");
-        activated = true;
-        break;
+  onScroll() {
+    const sections = ["home", "about", "services", "work", "contact"];
+    const scrollPosition = window.scrollY + 10;
+
+    let matched = false;
+
+    for (let id of sections) {
+      const el = document.getElementById(id);
+      if (el) {
+        const top = el.offsetTop;
+        const bottom = top + el.offsetHeight;
+
+        if (scrollPosition >= top && scrollPosition < bottom) {
+          document.querySelectorAll(".dot").forEach(dot => dot.classList.remove("active"));
+          const activeDot = document.querySelector(`.dot[data-scroll="${id}"]`);
+          if (activeDot) activeDot.classList.add("active");
+          matched = true;
+          break;
+        }
       }
     }
-  }
 
-  // Fallback: if scroll is near the very top, still activate 'home'
-  if (!activated && window.scrollY === 0) {
-    document.querySelectorAll(".dot").forEach((dot) => dot.classList.remove("active"));
-    const topDot = document.querySelector(`.dot[data-scroll="home"]`);
-    if (topDot) topDot.classList.add("active");
+    if (!matched && scrollPosition < 100) {
+      document.querySelectorAll(".dot").forEach(dot => dot.classList.remove("active"));
+      const topDot = document.querySelector(`.dot[data-scroll="home"]`);
+      if (topDot) topDot.classList.add("active");
+    }
   }
 }
+
 
 
 
