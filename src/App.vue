@@ -1,7 +1,7 @@
 <template>
-  <div id="app" class="d-flex">
+  <div id="app">
     <Sidebar />
-    <div id="main-content" style="margin-left: 250px; width: calc(100% - 250px);">
+    <div id="main-content">
       <router-view />
       <Footer />
     </div>
@@ -24,3 +24,11 @@ export default {
   }
 }
 </script>
+
+<style>
+#main-content {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+</style>

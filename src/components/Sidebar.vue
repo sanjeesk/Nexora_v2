@@ -110,4 +110,27 @@ export default {
 html {
   scroll-behavior: smooth;
 }
+
+
+.dot span {
+  position: absolute;
+  top: 50%;
+  right: 150%;
+  transform: translateY(-50%) translateX(20px);
+  display: inline-block;
+  opacity: 0;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  background-color: rgba(157, 143, 143, 0.2);
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin-right: 30px;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.dot:hover span {
+  opacity: 1;
+}
 </style>
