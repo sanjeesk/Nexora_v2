@@ -3,8 +3,8 @@
     <Sidebar />
 
     <main class="content">
-      <!-- Hero Section -->
-      <section id="hero" class="hero-section">
+      <!-- Home / Hero Section -->
+      <section id="home" class="hero-section">
         <div class="overlay"></div>
         <div class="hero-content">
           <a href="/" class="hero-logo-box">
@@ -27,88 +27,89 @@
       <section id="about" class="ftco-about img ftco-section">
         <div class="container">
           <div class="row d-flex no-gutters">
-  <!-- Left: Image + Video -->
-  <div class="col-md-6 col-lg-6 d-flex">
-    <div class="img-about img d-flex align-items-stretch">
-      <div class="overlay"></div>
-      <div
-        class="img img-video d-flex align-self-stretch align-items-center"
-        style="background-image: url('/about-2.webp');"
-      >
-        <div class="video justify-content-center">
-          <a
-            href="https://vimeo.com/45830194"
-            class="icon-video popup-vimeo d-flex justify-content-center align-items-center"
-          >
-            <span class="ion-ios-play"></span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+            <!-- Left: Image + Video -->
+            <div class="col-md-6 col-lg-6 d-flex">
+              <div class="img-about img d-flex align-items-stretch">
+                <div class="overlay"></div>
+                <div
+                  class="img img-video d-flex align-self-stretch align-items-center"
+                  style="background-image: url('/about-2.webp');"
+                >
+                  <div class="video justify-content-center">
+                    <a
+                      href="https://vimeo.com/45830194"
+                      class="icon-video popup-vimeo d-flex justify-content-center align-items-center"
+                    >
+                      <span class="ion-ios-play"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-  <!-- Right: Text Content -->
-  <div class="col-md-6 col-lg-6 pl-md-5">
-    <div class="heading-section">
-      <h2 class="mb-4">
-        Snapshot is A Creative Direction, <br />
-        Photography Agency
-      </h2>
-      <p>
-        A small river named Duden flows by their place and supplies it with the
-        necessary regelialia...
-      </p>
+            <!-- Right: Text Content -->
+            <div class="col-md-6 col-lg-6 pl-md-5">
+              <div class="heading-section">
+                <h2 class="mb-4">
+                  Snapshot is A Creative Direction, <br />
+                  Photography Agency
+                </h2>
+                <p>
+                  A small river named Duden flows by their place and supplies it with the
+                  necessary regelialia...
+                </p>
 
-      <div class="counter-wrap d-flex my-md-4">
-        <div class="text">
-          <p class="mb-4">
-            <span class="number">120</span>
-            <span>Project complete</span>
-          </p>
-        </div>
-      </div>
+                <div class="counter-wrap d-flex my-md-4">
+                  <div class="text">
+                    <p class="mb-4">
+                      <span class="number">120</span>
+                      <span>Project complete</span>
+                    </p>
+                  </div>
+                </div>
 
-      <!-- Side-by-side images -->
-      <div class="d-flex w-100">
-        <div
-          class="img img-about-2 mr-2"
-          style="background-image: url('/about.jpg');"
-        ></div>
-        <div
-          class="img img-about-2 ml-2"
-          style="background-image: url('/about-3.jpg');"
-        ></div>
-      </div>
+                <!-- Side-by-side images -->
+                <div class="d-flex w-100">
+                  <div
+                    class="img img-about-2 mr-2"
+                    style="background-image: url('/about.jpg');"
+                  ></div>
+                  <div
+                    class="img img-about-2 ml-2"
+                    style="background-image: url('/about-3.jpg');"
+                  ></div>
+                </div>
 
-      <!-- Quote -->
-      <blockquote class="blockquote mt-5">
-        <p class="mb-2">
-          "Far far away, behind the word mountains, far from the countries
-          Vokalia and Consonantia.."
-        </p>
-        <span>— Lucy Lee</span>
-      </blockquote>
-    </div>
-  </div>
-</div>
-
-        </div>
-      </section>
-
-      <!-- Portfolio Section -->
-      <section id="portfolio" class="portfolio">
-        <h2>My Work</h2>
-        <div class="grid">
-          <PortfolioItem
-            v-for="(img, index) in images"
-            :key="index"
-            :src="img"
-          />
+                <!-- Quote -->
+                <blockquote class="blockquote mt-5">
+                  <p class="mb-2">
+                    "Far far away, behind the word mountains, far from the countries
+                    Vokalia and Consonantia.."
+                  </p>
+                  <span>— Lucy Lee</span>
+                </blockquote>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- Footer -->
-      <footer class="footer">
+      <!-- Work / Portfolio Section -->
+      <section id="work" class="portfolio">
+        <div class="container">
+          <h2>My Work</h2>
+          <div class="grid">
+            <PortfolioItem
+              v-for="(img, index) in images"
+              :key="index"
+              :src="img"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact / Footer Section -->
+      <footer id="contact" class="footer">
         <p>© 2025 Sanjee. All rights reserved.</p>
       </footer>
     </main>
@@ -135,5 +136,5 @@ export default {
 </script>
 
 <style scoped>
-/* You can add section-specific styles here if needed */
+/* Add your scoped styles here if needed */
 </style>

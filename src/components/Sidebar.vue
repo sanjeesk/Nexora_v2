@@ -33,19 +33,30 @@ export default {
     window.removeEventListener('scroll', this.onScroll);
   },
   methods: {
-    onScroll() {
-      const sections = ["home", "about", "services", "work", "testimonial", "contact"];
-      let scrollPosition = window.scrollY;
+   onScroll() {
+  const sections = ["home", "about", "services", "work", "testimonial", "contact"];
+  const scrollPosition = window.scrollY + window.innerHeight / 2;
 
-      for (let id of sections) {
-        const el = document.getElementById(id);
-        if (el && scrollPosition >= el.offsetTop - 100) {
-          document.querySelectorAll(".dot").forEach((el) => el.classList.remove("active"));
-          const activeDot = document.querySelector(`.dot[data-scroll="${id}"]`);
-          if (activeDot) activeDot.classList.add("active");
-        }
+  for (let id of sections) {
+    const el = document.getElementById(id);
+    if (el) {
+      const offsetTop = el.offsetTop;
+      const offsetBottom = offsetTop + el.offsetHeight;
+
+      if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+        // Remove active from all
+        document.querySelectorAll(".dot").forEach((dot) => dot.classList.remove("active"));
+
+        // Add active to current one
+        const activeDot = document.querySelector(`.dot[data-scroll="${id}"]`);
+        if (activeDot) activeDot.classList.add("active");
+
+        break; // stop after finding the match
       }
     }
+  }
+}
+
   }
 }
 </script>
