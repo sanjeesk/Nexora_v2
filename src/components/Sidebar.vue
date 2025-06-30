@@ -14,9 +14,6 @@
         <a href="#work" class="dot" data-scroll="work"><span>Gallery</span></a>
       </li>
       <li>
-        <a href="#testimonial" class="dot" data-scroll="testimonial"><span>Testimony</span></a>
-      </li>
-      <li>
         <a href="#contact" class="dot" data-scroll="contact"><span>Contact</span></a>
       </li>
     </ul>
@@ -33,9 +30,11 @@ export default {
     window.removeEventListener('scroll', this.onScroll);
   },
   methods: {
-   onScroll() {
-  const sections = ["home", "about", "services", "work", "testimonial", "contact"];
-  const scrollPosition = window.scrollY + window.innerHeight / 2;
+    onScroll() {
+  const sections = ["home", "about", "work", "contact"];
+  const scrollPosition = window.scrollY + 1; // Adjust for top edge
+
+  let activated = false;
 
   for (let id of sections) {
     const el = document.getElementById(id);
@@ -44,18 +43,24 @@ export default {
       const offsetBottom = offsetTop + el.offsetHeight;
 
       if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-        // Remove active from all
         document.querySelectorAll(".dot").forEach((dot) => dot.classList.remove("active"));
-
-        // Add active to current one
         const activeDot = document.querySelector(`.dot[data-scroll="${id}"]`);
         if (activeDot) activeDot.classList.add("active");
-
-        break; // stop after finding the match
+        activated = true;
+        break;
       }
     }
   }
+
+  // Fallback: if scroll is near the very top, still activate 'home'
+  if (!activated && window.scrollY === 0) {
+    document.querySelectorAll(".dot").forEach((dot) => dot.classList.remove("active"));
+    const topDot = document.querySelector(`.dot[data-scroll="home"]`);
+    if (topDot) topDot.classList.add("active");
+  }
 }
+
+
 
   }
 }
