@@ -1,20 +1,14 @@
 <template>
   <nav id="navbar" class="nav">
     <ul class="nav-menu">
-      <li>
-        <a class="dot" data-scroll="home" @click.prevent="scrollTo('home')"><span>Home</span></a>
-      </li>
-      <li>
-        <a class="dot" data-scroll="about" @click.prevent="scrollTo('about')"><span>About</span></a>
-      </li>
-      <li>
-        <a class="dot" data-scroll="services" @click.prevent="scrollTo('services')"><span>Services</span></a>
-      </li>
-      <li>
-        <a class="dot" data-scroll="work" @click.prevent="scrollTo('work')"><span>Gallery</span></a>
-      </li>
-      <li>
-        <a class="dot" data-scroll="contact" @click.prevent="scrollTo('contact')"><span>Contact</span></a>
+      <li v-for="item in navItems" :key="item.id">
+        <a
+          class="dot"
+          :data-scroll="item.id"
+          @click.prevent="scrollTo(item.id)"
+        >
+          <span>{{ item.label }}</span>
+        </a>
       </li>
     </ul>
   </nav>
@@ -23,9 +17,20 @@
 <script>
 export default {
   name: 'Sidebar',
+  data() {
+    return {
+      navItems: [
+        { id: 'home', label: 'Home' },
+        { id: 'about', label: 'About' },
+        { id: 'services', label: 'Services' },
+        { id: 'work', label: 'Gallery' },
+        { id: 'contact', label: 'Contact' },
+      ]
+    };
+  },
   mounted() {
     window.addEventListener('scroll', this.onScroll);
-    this.onScroll(); // run once on load
+    this.onScroll(); // Run once at mount
   },
   beforeUnmount() {
     window.removeEventListener('scroll', this.onScroll);
@@ -40,7 +45,7 @@ export default {
       }
     },
     onScroll() {
-      const sections = ['home', 'about', 'services', 'work', 'contact'];
+      const sections = this.navItems.map(i => i.id);
       const scrollPosition = window.scrollY + window.innerHeight / 3;
 
       let matched = false;
@@ -64,7 +69,9 @@ export default {
       }
     },
     activateDot(id) {
-      document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
+      document.querySelectorAll('.dot').forEach(dot => {
+        dot.classList.remove('active');
+      });
       const activeDot = document.querySelector(`.dot[data-scroll="${id}"]`);
       if (activeDot) activeDot.classList.add('active');
     }
@@ -82,13 +89,17 @@ export default {
   z-index: 999;
 }
 
-/* List items spacing */
-.nav-menu li {
-  margin: 24px 0; /* make dots further apart */
+/* List styling */
+.nav-menu {
   list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-menu li {
+  margin: 24px 0;
 }
 
-/* Base dot */
+/* Dot Base */
 .dot {
   display: block;
   width: 12px;
@@ -100,19 +111,19 @@ export default {
   cursor: pointer;
 }
 
-/* Hover effect: scale and lighten */
+/* Dot Hover */
 .dot:hover {
   transform: scale(1.3);
   background: #cccccc;
 }
 
-/* Active state outer ring */
+/* Active Dot */
 .dot.active {
   background: transparent;
   border: 2px solid #9d8f8f;
 }
 
-/* Inner ring effect like Snapshot */
+/* Outer ring effect */
 .dot.active::after {
   content: '';
   width: 18px;
@@ -126,7 +137,7 @@ export default {
   box-sizing: border-box;
 }
 
-/* Label bubble style */
+/* Label tooltip */
 .dot span {
   position: absolute;
   top: 50%;
@@ -143,7 +154,7 @@ export default {
   transition: opacity 0.3s ease 0.2s;
 }
 
-/* Triangle arrow tail on label */
+/* Tooltip tail */
 .dot span::after {
   content: '';
   position: absolute;
@@ -157,7 +168,7 @@ export default {
   border-left: 6px solid rgba(0, 0, 0, 0.7);
 }
 
-/* Show label when hovered or active */
+/* Show label on hover or active */
 .dot:hover span,
 .dot.active span {
   opacity: 1;

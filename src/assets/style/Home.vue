@@ -32,12 +32,12 @@
                     </div>
                     <div class="col-md-6 col-lg-6 pl-md-5">
                         <div class="heading-section ftco-animate fadeInUp ftco-animated">
-                            <h2 class="mb-4">We Are Nexora Pixel Solutions — <br>A Visual & Digital Creative Agency</h2>
-                  <p class="about-decription">
-            At Nexora, we specialize in capturing moments, crafting digital presence, and building brands that last. Whether it’s through the lens of a camera, the pixels of a website, or the essence of a logo, we bring your ideas to life with clarity and creativity.
-            <br />
-            Based in Malaysia, we work with clients across events, personal brands, startups, and companies to deliver standout photography, high-performing websites, and cohesive brand identities.
-          </p>
+                            <h2 class="mb-4">Snapshot is A Creative Direction, <br>Photography Agency</h2>
+                            <p class="about-decription ">A small river named Duden flows by their place and supplies it
+                                with the necessary regelialia. It is a paradisematic country, in which roasted parts of
+                                sentences fly into your mouth.Far far away, behind the word mountains, far from the
+                                countries Vokalia and Consonantia, there live the blind texts. Separated they live in
+                                Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
 
                             <div class="project_120">
                                 <span>120</span>
@@ -54,8 +54,9 @@
                             </div>
 
                             <div class="blockquote mt-5">
-                                <p class="mb-2">"We don't just deliver visuals — we shape your story through powerful, pixel-perfect experiences."</p>
-                                <span>— Sri, Creative Director</span>
+                                <p class="mb-2">"Far far away, behind the word mountains, far from the countries Vokalia
+                                    and Consonantia.."</p>
+                                <span>— Lucy Lee</span>
                             </div>
 
 
@@ -65,147 +66,147 @@
             </div>
         </section>
 
-<!-- Services -->
-<section id="services" class="ftco-section" data-animate="zoom-in">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-9">
-        <div class="row">
-          <div class="col-md-12 heading-section ftco-animate pb-5 fadeInUp ftco-animated">
-            <h2 class="mb-4">Our Creative Services</h2>
-            <p class="about-decription">From capturing timeless visuals to building impactful online presence, we craft brands that connect and convert.</p>
-          </div>
-        </div>
+        <!-- Services -->
+        <section id="services" class="ftco-section" data-animate="zoom-in">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-5 heading-section ftco-animate pb-5 fadeInUp ftco-animated">
+                                <h2 class="mb-4">Photography Services</h2>
+                                <p class="about-decription">A small river named Duden flows by their place and supplies
+                                    it with the necessary regelialia. It is a paradisematic country.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="media block-6 services d-block ftco-animate fadeInUp ftco-animated">
+                                    <div class="icon">
+                                        <span class="flaticon-video-camera"></span>
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="heading mb-3">Movies &amp; Advertising Videos</h3>
+                                        <p class="about-decription">A small river named Duden flows by their place and
+                                            supplies it with the necessary regelialia. It is a paradisematic country, in
+                                            which roasted parts of sentences.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="media block-6 services d-block ftco-animate fadeInUp ftco-animated">
+                                    <div class="icon"><span class="flaticon-video-player"></span></div>
+                                    <div class="media-body">
+                                        <h3 class="heading mb-3">Clip &amp; Music Videos</h3>
+                                        <p class="about-decription">A small river named Duden flows by their place and
+                                            supplies it with the necessary regelialia. It is a paradisematic country, in
+                                            which roasted parts of sentences.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="media block-6 services d-block ftco-animate fadeInUp ftco-animated">
+                                    <div class="icon"><span class="flaticon-video-player-1"></span></div>
+                                    <div class="media-body">
+                                        <h3 class="heading mb-3">Short Film Productions</h3>
+                                        <p class="about-decription">A small river named Duden flows by their place and
+                                            supplies it with the necessary regelialia. It is a paradisematic country, in
+                                            which roasted parts of sentences.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 d-flex align-items-stretch">
+                        <div class="img w-100 left-img" style="min-height: auto !important;"></div>
+                    </div>
+                </div>
+                <div class="row progress-circle pt-md-5">
+                    <div class="col-md-7 order-md-last py-md-5">
+                        <div class="row">
+                            <div class="col-md-4 mb-md-0 mb-4 ftco-animate fadeInUp ftco-animated">
+                                <div class="">
+                                    <h2 class="text-center mb-4">Creation</h2>
 
-        <!-- Photography Service -->
-        <div class="row mb-5">
-          <div class="col-md-4">
-            <div class="media block-6 services d-block ftco-animate fadeInUp">
-              <div class="icon"><span class="flaticon-video-camera"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Photography</h3>
-                <p class="about-decription">We provide professional photography services including event coverage, studio portraits, lifestyle shoots, and product photography.</p>
-                <ul>
-                  <li>🎉 Event Photography</li>
-                  <li>📸 Studio & Portraits</li>
-                  <li>🛍️ Product & Commercial</li>
-                  <li>🌿 Lifestyle & Outdoor</li>
-                </ul>
-                <a href="#contact" class="btn btn-outline-light mt-3">Book a Session</a>
-              </div>
+                                    <!-- Progress bar 1 -->
+                                    <div class="progress mx-auto" data-value="90">
+                                        <span class="progress-left">
+                                            <span class="progress-bar border-primary"
+                                                style="transform: rotate(144deg);"></span>
+                                        </span>
+                                        <span class="progress-right">
+                                            <span class="progress-bar border-primary"
+                                                style="transform: rotate(180deg);"></span>
+                                        </span>
+                                        <div
+                                            class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                            <div class="h5">90<sup class="small">%</sup></div>
+                                        </div>
+                                    </div>
+                                    <!-- END -->
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 mb-md-0 mb-4 ftco-animate fadeInUp ftco-animated">
+                                <div class="">
+                                    <h2 class="text-center mb-4">Development</h2>
+
+                                    <!-- Progress bar 1 -->
+                                    <div class="progress mx-auto" data-value="80">
+                                        <span class="progress-left">
+                                            <span class="progress-bar border-primary"
+                                                style="transform: rotate(108deg);"></span>
+                                        </span>
+                                        <span class="progress-right">
+                                            <span class="progress-bar border-primary"
+                                                style="transform: rotate(180deg);"></span>
+                                        </span>
+                                        <div
+                                            class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                            <div class="h5">80<sup class="small">%</sup></div>
+                                        </div>
+                                    </div>
+                                    <!-- END -->
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 mb-md-0 mb-4 ftco-animate fadeInUp ftco-animated">
+                                <div class="">
+                                    <h2 class="text-center mb-4">Production</h2>
+
+                                    <!-- Progress bar 1 -->
+                                    <div class="progress mx-auto" data-value="75">
+                                        <span class="progress-left">
+                                            <span class="progress-bar border-primary"
+                                                style="transform: rotate(90deg);"></span>
+                                        </span>
+                                        <span class="progress-right">
+                                            <span class="progress-bar border-primary"
+                                                style="transform: rotate(180deg);"></span>
+                                        </span>
+                                        <div
+                                            class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                            <div class="h5">75<sup class="small">%</sup></div>
+                                        </div>
+                                    </div>
+                                    <!-- END -->
+                                </div>
+                            </div>
+
+                            <div class="p-md-4 mt-4">
+                                <div class="col-md-8 ftco-animate fadeInUp ftco-animated">
+                                    <p class="about-decription">Far far away, behind the word mountains, far from the
+                                        countries Vokalia and Consonantia, there live the blind texts. Separated they
+                                        live in Bookmarksgrove right at the coast.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 d-flex align-items-stretch">
+                        <div class="img w-100 left-img"></div>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          <!-- Web Services -->
-          <div class="col-md-4">
-            <div class="media block-6 services d-block ftco-animate fadeInUp">
-              <div class="icon"><span class="flaticon-video-player"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Web Services</h3>
-                <p class="about-decription">We design modern, fast, and responsive websites tailored to your business goals — from landing pages to full e-commerce stores.</p>
-                <ul>
-                  <li>💻 Landing Pages & Portfolios</li>
-                  <li>🛒 E-commerce Platforms</li>
-                  <li>🔧 CMS Setup & Maintenance</li>
-                  <li>📈 SEO & Analytics Integration</li>
-                </ul>
-                <a href="#contact" class="btn btn-outline-light mt-3">Request a Quote</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Branding -->
-          <div class="col-md-4">
-            <div class="media block-6 services d-block ftco-animate fadeInUp">
-              <div class="icon"><span class="flaticon-video-player-1"></span></div>
-              <div class="media-body">
-                <h3 class="heading mb-3">Branding</h3>
-                <p class="about-decription">We build bold, beautiful brand identities from scratch or refine your existing brand to stand out in today’s crowded marketplace.</p>
-                <ul>
-                  <li>🖋️ Logo & Visual Identity</li>
-                  <li>📘 Brand Guidelines</li>
-                  <li>📱 Social Media Kit</li>
-                  <li>🧠 Brand Strategy</li>
-                </ul>
-                <a href="#contact" class="btn btn-outline-light mt-3">Let’s Build Your Brand</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Side Image -->
-      <div class="col-md-3 d-flex align-items-stretch">
-        <div class="img w-100 left-img" style="min-height: auto !important;"></div>
-      </div>
-    </div>
-
-    <!-- Progress Circles (unchanged, optional to keep) -->
-    <div class="row progress-circle pt-md-5">
-      <div class="col-md-7 order-md-last py-md-5">
-        <div class="row">
-          <div class="col-md-4 mb-md-0 mb-4 ftco-animate fadeInUp">
-            <h2 class="text-center mb-4">Creative</h2>
-            <div class="progress mx-auto" data-value="90">
-              <span class="progress-left">
-                <span class="progress-bar border-primary" style="transform: rotate(144deg);"></span>
-              </span>
-              <span class="progress-right">
-                <span class="progress-bar border-primary" style="transform: rotate(180deg);"></span>
-              </span>
-              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                <div class="h5">90<sup class="small">%</sup></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mb-md-0 mb-4 ftco-animate fadeInUp">
-            <h2 class="text-center mb-4">Technical</h2>
-            <div class="progress mx-auto" data-value="80">
-              <span class="progress-left">
-                <span class="progress-bar border-primary" style="transform: rotate(108deg);"></span>
-              </span>
-              <span class="progress-right">
-                <span class="progress-bar border-primary" style="transform: rotate(180deg);"></span>
-              </span>
-              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                <div class="h5">80<sup class="small">%</sup></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mb-md-0 mb-4 ftco-animate fadeInUp">
-            <h2 class="text-center mb-4">Execution</h2>
-            <div class="progress mx-auto" data-value="75">
-              <span class="progress-left">
-                <span class="progress-bar border-primary" style="transform: rotate(90deg);"></span>
-              </span>
-              <span class="progress-right">
-                <span class="progress-bar border-primary" style="transform: rotate(180deg);"></span>
-              </span>
-              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                <div class="h5">75<sup class="small">%</sup></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="p-md-4 mt-4">
-            <div class="col-md-8 ftco-animate fadeInUp">
-              <p class="about-decription">We don’t just offer services — we build long-term value for your business through powerful storytelling, strategic design, and visual identity.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-5 d-flex align-items-stretch">
-        <div class="img w-100 left-img" style="min-height: auto !important;"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
+        </section>
 
         <!-- Work -->
         <section id="work" class="ftco-section" data-animate="fade-up">
@@ -276,9 +277,6 @@
             </div>
         </section>
 
-
-
-
         <!-- Contact -->
         <section class="ftco-section contact-section" id="contact" data-animate="fade-left">
             <div class="container">
@@ -293,12 +291,12 @@
 
                 <div class="row mb-5">
                     <div class="col-md-3 d-flex ftco-animate fadeInUp ftco-animated">
-                        <div class="align-self-stretch box text-center p-4 alignment_center">
+                        <div class="align-self-stretch box text-center p-4">
                             <div class="icon d-flex align-items-center justify-content-center">
                                 <span class="fas fa-map-marker-alt"></span>
                             </div>
                             <div>
-                                <h3 class="">Address</h3>
+                                <h3 class="mb-4">Address</h3>
                                 <p class="about-decription" style="margin-bottom: 0 !important;">198 West 21th Street,
                                     Suite 721
                                     New York NY 10016</p>
@@ -306,12 +304,12 @@
                         </div>
                     </div>
                     <div class="col-md-3 d-flex ftco-animate fadeInUp ftco-animated">
-                        <div class="align-self-stretch box text-center p-4 alignment_center">
+                        <div class="align-self-stretch box text-center p-4">
                             <div class="icon d-flex align-items-center justify-content-center">
                                 <span class="fas fa-phone"></span>
                             </div>
                             <div>
-                                <h3 class="">Contact Number</h3>
+                                <h3 class="mb-4">Contact Number</h3>
                                 <p style="margin-bottom: 0 !important;"><a class="about-decription"
                                         href="tel://1234567920">+
                                         1235 2355 98</a></p>
@@ -319,24 +317,24 @@
                         </div>
                     </div>
                     <div class="col-md-3 d-flex ftco-animate fadeInUp ftco-animated">
-                        <div class="align-self-stretch box text-center p-4 alignment_center">
+                        <div class="align-self-stretch box text-center p-4">
                             <div class="icon d-flex align-items-center justify-content-center">
                                 <span class="fas fa-paper-plane"></span>
                             </div>
                             <div>
-                                <h3 class="">Email Address</h3>
+                                <h3 class="mb-4">Email Address</h3>
                                 <p style="margin-bottom: 0 !important;"><a class="about-decription"
                                         href="mailto:info@yoursite.com">info@yoursite.com</a></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3 d-flex ftco-animate fadeInUp ftco-animated">
-                        <div class="align-self-stretch box text-center p-4 alignment_center">
+                        <div class="align-self-stretch box text-center p-4">
                             <div class="icon d-flex align-items-center justify-content-center">
                                 <span class="fas fa-globe"></span>
                             </div>
                             <div>
-                                <h3 class="">Website</h3>
+                                <h3 class="mb-4">Website</h3>
                                 <p style="margin-bottom: 0 !important;"><a class="about-decription"
                                         href="#">yoursite.com</a>
                                 </p>
@@ -387,7 +385,6 @@
                 </div>
             </div>
         </section>
-
 
 
 
@@ -482,7 +479,7 @@ onMounted(() => {
     padding: 10px;
 }
 
-.model .desc .text h2 {
+fas fa-expand {
     font-size: 14px;
     margin: 0;
 }
@@ -647,33 +644,5 @@ onMounted(() => {
 .animate[data-animate="zoom-in"] {
     opacity: 1;
     transform: none;
-}
-
-
-section {
-    padding: 80px 0;
-    color: #fff;
-}
-
-.hero-section {
-    background-color: #000;
-}
-
-.ftco-about {
-    background: linear-gradient(to bottom, #111, #0d0d0d);
-}
-
-#services {
-    background-color: #121212;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-#work {
-    background: radial-gradient(circle at center, #1a1a1a, #0e0e0e);
-}
-
-#contact {
-    background-color: #101010;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 </style>

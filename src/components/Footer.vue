@@ -7,7 +7,7 @@
             &copy; {{ currentYear }} NEXORA Pixel Solutions. All rights reserved.
           </p>
 
-          <ul class="ftco-footer-social p-0">
+          <ul class="ftco-footer-social p-0 footer_social">
             <li class="ftco-animate fadeInUp ftco-animated">
               <a href="#"><span class="fab fa-twitter"></span></a>
             </li>
