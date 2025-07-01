@@ -1860,3 +1860,25 @@ html {
 .footer_social a:hover{
   color: #007bff;
 }
+
+.card_service {
+    padding: 10px;
+    border: 1px solid white;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.card_service:hover {
+    background: linear-gradient(135deg, #ffffff10, #ffffff20);
+    transform: scale(1.02);
+    border-color: #ddd;
+}
+
+.card_service h3,
+.card_service p {
+    color: #ccc;
+    transition: color 0.3s ease;
+}

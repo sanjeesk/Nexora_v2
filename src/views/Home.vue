@@ -72,62 +72,41 @@
       <div class="col-md-9">
         <div class="row">
           <div class="col-md-12 heading-section ftco-animate pb-5 fadeInUp ftco-animated">
-            <h2 class="mb-4">Our Creative Services</h2>
-            <p class="about-decription">From capturing timeless visuals to building impactful online presence, we craft brands that connect and convert.</p>
+            <h2 class="mb-2">Our Creative Services</h2>
+            <p class="about-decription" style="margin-bottom: 0 !important;">From capturing timeless visuals to building impactful online presence, we craft brands that connect and convert.</p>
           </div>
         </div>
 
         <!-- Photography Service -->
         <div class="row mb-5">
           <div class="col-md-4">
-            <div class="media block-6 services d-block ftco-animate fadeInUp">
+            <div class="media block-6 services d-block ftco-animate fadeInUp card_service" onclick="document.getElementById('photographyDetails').scrollIntoView({ behavior: 'smooth' });">
               <div class="icon"><span class="flaticon-video-camera"></span></div>
               <div class="media-body">
-                <h3 class="heading mb-3">Photography</h3>
-                <p class="about-decription">We provide professional photography services including event coverage, studio portraits, lifestyle shoots, and product photography.</p>
-                <ul>
-                  <li>🎉 Event Photography</li>
-                  <li>📸 Studio & Portraits</li>
-                  <li>🛍️ Product & Commercial</li>
-                  <li>🌿 Lifestyle & Outdoor</li>
-                </ul>
-                <a href="#contact" class="btn btn-outline-light mt-3">Book a Session</a>
+                <h3 class="heading mb-2" style="color: #9da1a5;">Photography</h3>
+                <p class="about-decription" style="margin-bottom: 0 !important;">We provide professional photography services including event coverage, studio portraits, lifestyle shoots, and product photography.</p>
               </div>
             </div>
           </div>
 
           <!-- Web Services -->
           <div class="col-md-4">
-            <div class="media block-6 services d-block ftco-animate fadeInUp">
+            <div class="media block-6 services d-block ftco-animate fadeInUp card_service" onclick="document.getElementById('webDetails').scrollIntoView({ behavior: 'smooth' });">
               <div class="icon"><span class="flaticon-video-player"></span></div>
               <div class="media-body">
-                <h3 class="heading mb-3">Web Services</h3>
-                <p class="about-decription">We design modern, fast, and responsive websites tailored to your business goals — from landing pages to full e-commerce stores.</p>
-                <ul>
-                  <li>💻 Landing Pages & Portfolios</li>
-                  <li>🛒 E-commerce Platforms</li>
-                  <li>🔧 CMS Setup & Maintenance</li>
-                  <li>📈 SEO & Analytics Integration</li>
-                </ul>
-                <a href="#contact" class="btn btn-outline-light mt-3">Request a Quote</a>
+                <h3 class="heading mb-2" style="color: #9da1a5;">Web Services</h3>
+                <p class="about-decription" style="margin-bottom: 0 !important;">We design modern, fast, and responsive websites tailored to your business goals — from landing pages to full e-commerce stores.</p>
               </div>
             </div>
           </div>
 
           <!-- Branding -->
           <div class="col-md-4">
-            <div class="media block-6 services d-block ftco-animate fadeInUp">
+            <div class="media block-6 services d-block ftco-animate fadeInUp card_service" onclick="document.getElementById('brandingDetails').scrollIntoView({ behavior: 'smooth' });">
               <div class="icon"><span class="flaticon-video-player-1"></span></div>
               <div class="media-body">
-                <h3 class="heading mb-3">Branding</h3>
-                <p class="about-decription">We build bold, beautiful brand identities from scratch or refine your existing brand to stand out in today’s crowded marketplace.</p>
-                <ul>
-                  <li>🖋️ Logo & Visual Identity</li>
-                  <li>📘 Brand Guidelines</li>
-                  <li>📱 Social Media Kit</li>
-                  <li>🧠 Brand Strategy</li>
-                </ul>
-                <a href="#contact" class="btn btn-outline-light mt-3">Let’s Build Your Brand</a>
+                <h3 class="heading mb-2" style="color: #9da1a5;">Branding</h3>
+                <p class="about-decription" style="margin-bottom: 0 !important;">We build bold, beautiful brand identities from scratch or refine your existing brand to stand out in today’s crowded marketplace.</p>
               </div>
             </div>
           </div>
@@ -203,6 +182,8 @@
     </div>
   </div>
 </section>
+
+
 
 
 
