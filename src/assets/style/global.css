@@ -1889,52 +1889,33 @@ html {
   scroll-margin-top: 80px; /* adjust based on your layout */
 }
 
-/* === Section Wrapper === */
 .section-wrapper {
   padding: 80px 20px;
   background-color: #000;
   color: #fff;
 }
-
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
 }
-
-/* Cards */
 .service-card {
   background-color: #111;
   border: 1px solid #2a2a2a;
   border-radius: 1rem;
   padding: 1.5rem;
   height: 100%;
-  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 0.3s ease;
 }
 .service-card:hover {
   border-color: #fff;
   box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
   transform: translateY(-4px) scale(1.015);
 }
-
-.service-card h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  color: #fff;
-}
-
-.service-card p {
-  font-size: 0.9rem;
-  color: #bbb;
-  line-height: 1.6;
-}
-
-/* Past Work + Package Boxes */
 .package-box {
   background-color: #1a1a1a;
   border: 1px solid #333;
@@ -1946,42 +1927,110 @@ html {
   border-color: #fff;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
 }
-
-.package-box h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-
-.package-box p {
-  font-size: 0.85rem;
-  color: #ccc;
-  line-height: 1.5;
-}
-
-/* CTA */
 .section-cta {
   background-color: #fff;
   color: #000;
   font-weight: 600;
   padding: 0.75rem 2rem;
   border-radius: 9999px;
-  margin-top: 2rem;
   transition: 0.3s ease;
 }
 .section-cta:hover {
   background-color: #e4e4e4;
 }
-
-/* Animate On Scroll */
 [data-animate] {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s ease-out;
 }
-
 [data-animate].animate {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.letter-spacing {
+  letter-spacing: 0.05em;
+}
+
+.section-desc {
+  color: #aaa;
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.text-gray-soft {
+  color: #aaa !important;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+
+.carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+      }
+
+
+
+      .whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(37, 211, 102, 0.6), 0 0 20px rgba(37, 211, 102, 0.3);
+
+}
+
+.whatsapp-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.tooltip-msg {
+  position: absolute;
+  right: 120%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.whatsapp-float:hover .tooltip-msg {
+  opacity: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
