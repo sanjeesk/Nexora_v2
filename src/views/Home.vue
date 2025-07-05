@@ -80,7 +80,7 @@
         <!-- Photography Service -->
         <div class="row mb-5">
           <div class="col-md-4">
-            <div class="media block-6 services d-block ftco-animate fadeInUp card_service" onclick="document.getElementById('photographyDetails').scrollIntoView({ behavior: 'smooth' });">
+            <div id="photography" class="media block-6 services d-block ftco-animate fadeInUp card_service" @click="scrollToSection(photographyRef)">
               <div class="icon"><span class="flaticon-video-camera"></span></div>
               <div class="media-body">
                 <h3 class="heading mb-2" style="color: #9da1a5;">Photography</h3>
@@ -91,7 +91,7 @@
 
           <!-- Web Services -->
           <div class="col-md-4">
-            <div class="media block-6 services d-block ftco-animate fadeInUp card_service" onclick="document.getElementById('webDetails').scrollIntoView({ behavior: 'smooth' });">
+            <div id="webDetails" class="media block-6 services d-block ftco-animate fadeInUp card_service" @click="scrollToSection(webRef)">
               <div class="icon"><span class="flaticon-video-player"></span></div>
               <div class="media-body">
                 <h3 class="heading mb-2" style="color: #9da1a5;">Web Services</h3>
@@ -102,7 +102,7 @@
 
           <!-- Branding -->
           <div class="col-md-4">
-            <div class="media block-6 services d-block ftco-animate fadeInUp card_service" onclick="document.getElementById('brandingDetails').scrollIntoView({ behavior: 'smooth' });">
+            <div id="brandingDetails" class="media block-6 services d-block ftco-animate fadeInUp card_service" @click="scrollToSection(brandingRef)">
               <div class="icon"><span class="flaticon-video-player-1"></span></div>
               <div class="media-body">
                 <h3 class="heading mb-2" style="color: #9da1a5;">Branding</h3>
@@ -258,6 +258,23 @@
         </section>
 
 
+        <!-- photographyDetails -->
+        <section id="photography" ref="photographyRef">
+        hello
+        </section>
+
+              <!-- webDetails -->
+        <section id="webDetails" ref="webRef">
+        hello
+        </section>
+
+                      <!-- brandingDetails -->
+        <section id="brandingDetails" ref="brandingRef">
+        hello
+        </section>
+
+
+
 
 
         <!-- Contact -->
@@ -378,42 +395,56 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
+// Tabs & modal
 const activeTab = ref('tab1')
 const modalImage = ref(null)
 
 const getImageUrl = (tab, index) => {
-    const label = getCategoryName(tab)
-    return `https://via.placeholder.com/800x600?text=${label}+${index}`
+  const label = getCategoryName(tab)
+  return `https://via.placeholder.com/800x600?text=${label}+${index}`
 }
 
 const getCategoryName = (tab) => {
-    return {
-        tab1: 'Nature',
-        tab2: 'Portrait',
-        tab3: 'Urban',
-        tab4: 'Events'
-    }[tab]
+  return {
+    tab1: 'Nature',
+    tab2: 'Portrait',
+    tab3: 'Urban',
+    tab4: 'Events'
+  }[tab]
 }
 
 const openModal = (img) => {
-    modalImage.value = img
+  modalImage.value = img
 }
 
+// Refs for section scroll
+const photographyRef = ref(null)
+const webRef = ref(null)
+const brandingRef = ref(null)
+
+const scrollToSection = (sectionRef) => {
+  if (sectionRef?.value) {
+    sectionRef.value.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
+// Animate on scroll
 onMounted(() => {
-    const elements = document.querySelectorAll('[data-animate]')
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate')
-                    observer.unobserve(entry.target)
-                }
-            })
-        },
-        { threshold: 0.15 }
-    )
-    elements.forEach((el) => observer.observe(el))
+  const elements = document.querySelectorAll('[data-animate]')
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate')
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.15 }
+  )
+  elements.forEach((el) => observer.observe(el))
 })
+
 </script>
 
 
