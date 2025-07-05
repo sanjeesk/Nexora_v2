@@ -260,11 +260,17 @@
 
         <!-- photographyDetails -->
          <section id="photography" class="section-wrapper">
-  <div class="container">
-    <h2>Photography Services</h2>
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Title -->
+    <div class="text-center mb-16">
+      <h2 class="section-title">Photography Services</h2>
+      <p class="text-gray-400 text-sm max-w-2xl mx-auto">
+        We offer professional photography for weddings, birthdays, engagements, corporate events & more.
+      </p>
+    </div>
 
-    <!-- Sub-services -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+    <!-- Sub-Services -->
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-20">
       <div
         v-for="(item, index) in photographyServices"
         :key="index"
@@ -277,9 +283,9 @@
     </div>
 
     <!-- Past Work -->
-    <div class="past-work mb-12">
-      <h3 class="text-2xl font-bold">Past Work</h3>
-      <ul>
+    <div class="mb-20" data-animate="fade-up">
+      <h3 class="text-2xl font-bold mb-4">Past Work</h3>
+      <ul class="list-disc list-inside text-gray-400 space-y-2 pl-4">
         <li>Indian Wedding – KL 2024</li>
         <li>Birthday Shoot – Shah Alam</li>
         <li>Corporate Launch – PJ</li>
@@ -287,28 +293,31 @@
     </div>
 
     <!-- Packages -->
-    <div>
-      <h3 class="text-2xl font-bold mb-4">Packages & Pricing</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="mb-12" data-animate="fade-up">
+      <h3 class="text-2xl font-bold mb-6">Packages & Pricing</h3>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <div
           v-for="(pkg, index) in photographyPackages"
           :key="index"
           class="package-box"
         >
           <h4>{{ pkg.name }}</h4>
-          <p class="mb-1">{{ pkg.price }}</p>
+          <p>{{ pkg.price }}</p>
           <p>{{ pkg.details }}</p>
         </div>
       </div>
+    </div>
 
-      <div class="text-center">
-        <button @click="scrollToSection(contactRef)" class="section-cta">
-          Contact Us
-        </button>
-      </div>
+    <!-- CTA -->
+    <div class="text-center">
+      <button @click="scrollToSection(contactRef)" class="section-cta">
+        Contact Us
+      </button>
     </div>
   </div>
 </section>
+
+
 
 
 
@@ -568,19 +577,18 @@ onMounted(() => {
 
 // Photography Sub-services
 const photographyServices = [
-  { title: 'Indian Wedding Photography', description: 'Traditional and candid wedding coverage for Indian ceremonies in Malaysia.' },
-  { title: 'Engagement Shoots', description: 'Creative pre-wedding couple shoots with styled settings.' },
-  { title: 'Birthday & Events', description: 'Coverage for 1st birthdays, baby showers, and special private events.' },
-  { title: 'Corporate Events', description: 'Formal photography for launches, dinners, and office functions.' },
-  { title: 'Studio Portraits', description: 'Indoor portraits for couples, families, or individuals.' },
-  { title: 'Product Photography', description: 'Clean shots for businesses — ideal for websites and online catalogs.' }
+  { title: 'Wedding Photography', description: 'Traditional and candid moments from Malaysian-Indian weddings.' },
+  { title: 'Engagement Shoots', description: 'Pre-wedding and engagement photography to tell your love story.' },
+  { title: 'Birthday Events', description: 'Joyful coverage of birthdays — from kids to adults.' },
+  { title: 'Corporate Shoots', description: 'Event coverage, team portraits, product & branding visuals.' },
+  { title: 'Studio Portraits', description: 'Indoor portrait sessions with controlled lighting and styling.' },
+  { title: 'Product Photography', description: 'High-quality e-commerce ready product shots.' }
 ]
 
-// Photography Packages
 const photographyPackages = [
-  { name: 'Basic', price: 'RM 1,000', details: '1 photographer, 50 edited photos, Google Drive delivery.' },
-  { name: 'Premium', price: 'RM 1,800', details: 'Full-day coverage, 100 edits, framed photo included.' },
-  { name: 'Elite', price: 'RM 2,500', details: '2 photographers, video highlights, full album + framed prints.' }
+  { name: 'Basic Package', price: 'RM 1,000', details: '1 Photographer, 50 Edited Photos, Softcopy Delivery' },
+  { name: 'Premium Package', price: 'RM 1,800', details: '2 Photographers, All Edited, Album + Frame' },
+  { name: 'Event Gold', price: 'RM 2,500', details: 'Full Day, Cinematic Video, Drone, Premium Album' }
 ]
 
 // Web Services Sub-services
