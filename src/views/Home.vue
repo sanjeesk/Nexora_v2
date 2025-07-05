@@ -347,28 +347,39 @@
         </section>
 
 
+        
         <!-- photographyDetails -->
          <section id="photography" class="section-wrapper">
-  <div class="container">
-    <h2>Photography Services</h2>
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Title -->
+    <div class="text-center mb-16">
+      <h2 class="section-title">Photography Services</h2>
+      <p class="text-gray-400 text-sm max-w-2xl mx-auto">
+        We offer professional photography for weddings, birthdays, engagements, corporate events & more.
+      </p>
+    </div>
 
-    <!-- Sub-services -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+    <!-- Sub-Services -->
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-20">
       <div
+        class="col-md-4"
         v-for="(item, index) in photographyServices"
         :key="index"
-        class="service-card"
-        data-animate="fade-up"
       >
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
+        <div class="media block-6 services d-block ftco-animate fadeInUp card_service h-100">
+          <div class="icon"><span class="flaticon-photo-camera"></span></div>
+          <div class="media-body">
+            <h3 class="heading mb-2">{{ item.title }}</h3>
+            <p class="about-decription mb-0">{{ item.description }}</p>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Past Work -->
-    <div class="past-work mb-12">
-      <h3 class="text-2xl font-bold">Past Work</h3>
-      <ul>
+    <div class="mb-20" data-animate="fade-up">
+      <h3 class="text-2xl font-bold mb-4">Past Work</h3>
+      <ul class="list-disc list-inside text-gray-400 space-y-2 pl-4">
         <li>Indian Wedding – KL 2024</li>
         <li>Birthday Shoot – Shah Alam</li>
         <li>Corporate Launch – PJ</li>
@@ -376,28 +387,31 @@
     </div>
 
     <!-- Packages -->
-    <div>
-      <h3 class="text-2xl font-bold mb-4">Packages & Pricing</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="mb-12" data-animate="fade-up">
+      <h3 class="text-2xl font-bold mb-6">Packages & Pricing</h3>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <div
           v-for="(pkg, index) in photographyPackages"
           :key="index"
           class="package-box"
         >
           <h4>{{ pkg.name }}</h4>
-          <p class="mb-1">{{ pkg.price }}</p>
+          <p>{{ pkg.price }}</p>
           <p>{{ pkg.details }}</p>
         </div>
       </div>
+    </div>
 
-      <div class="text-center">
-        <button @click="scrollToSection(contactRef)" class="section-cta">
-          Contact Us
-        </button>
-      </div>
+    <!-- CTA -->
+    <div class="text-center">
+      <button @click="scrollToSection(contactRef)" class="section-cta">
+        Contact Us
+      </button>
     </div>
   </div>
 </section>
+
+
 
 
 
@@ -611,9 +625,7 @@ const webRef = ref(null)
 const brandingRef = ref(null)
 
 const scrollToSection = (sectionRef) => {
-  if (sectionRef?.value) {
-    sectionRef.value.scrollIntoView({ behavior: 'smooth' })
-  }
+  sectionRef?.value?.scrollIntoView({ behavior: 'smooth' })
 }
 
 // Animate on scroll
