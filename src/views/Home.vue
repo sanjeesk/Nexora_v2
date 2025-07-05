@@ -88,26 +88,17 @@
                             </div>
                         </div>
 
-                        <!-- Photography Service -->
-                        <div class="row mb-5">
-                            <div class="col-md-4">
-                                <div class="media block-6 services d-block ftco-animate fadeInUp card_service"
-                                    @click="scrollToSection(photographyRef)">
-                                    <div class="icon">
-                                        <span class="flaticon-video-camera"></span>
-                                    </div>
-                                    <div class="media-body">
-                                        <h3 class="heading mb-2" style="color: #9da1a5">
-                                            Photography
-                                        </h3>
-                                        <p class="about-decription" style="margin-bottom: 0 !important">
-                                            We provide professional photography services including
-                                            event coverage, studio portraits, lifestyle shoots, and
-                                            product photography.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+        <!-- Photography Service -->
+        <div class="row mb-5">
+          <div class="col-md-4">
+            <div id="photography" class="media block-6 services d-block ftco-animate fadeInUp card_service" @click="scrollToSection(photographyRef)">
+              <div class="icon"><span class="flaticon-video-camera"></span></div>
+              <div class="media-body">
+                <h3 class="heading mb-2" style="color: #9da1a5;">Photography</h3>
+                <p class="about-decription" style="margin-bottom: 0 !important;">We provide professional photography services including event coverage, studio portraits, lifestyle shoots, and product photography.</p>
+              </div>
+            </div>
+          </div>
 
                             <!-- Web Services -->
                             <div class="col-md-4">
@@ -426,169 +417,32 @@
           </div>
         </div>
 
-        <!-- CTA -->
-        <div class="text-end">
-          <button class="btn btn-light px-4 py-2 rounded-pill" @click="scrollToSection(contactRef)">
-            Contact Us
-          </button>
-        </div>
-      </div>
 
-      <!-- Right Column - 30% (Subservices) -->
-      <div class="col-md-4 d-flex flex-column gap-3">
-        <!-- Large Main Service -->
-        <div class="position-relative rounded overflow-hidden" style="height: 280px; cursor: pointer" @click="selectService(webServices[0])">
-          <img :src="webServices[0].image" class="w-100 h-100 object-cover" />
-          <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 text-white d-flex flex-column justify-content-end p-3">
-            <h5 class="mb-1">{{ webServices[0].title }}</h5>
-            <p class="mb-0 small">{{ webServices[0].description }}</p>
-          </div>
-        </div>
-
-        <!-- 6 Sub Services -->
-        <div class="row g-2">
-          <div v-for="(item, index) in webServices.slice(1, 7)" :key="index" class="col-4">
-            <div
-              class="card h-100 bg-dark text-white border-0 rounded shadow-sm service-thumb"
-              style="cursor: pointer"
-              @click="selectService(item)"
-            >
-              <img :src="item.image" class="card-img-top object-cover rounded-top" style="height: 90px" />
-              <div class="card-body p-2">
-                <h6 class="card-title mb-0 small">{{ item.title }}</h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Optional 7th Thumbnail -->
-        <div v-if="webServices[7]" class="mt-2 rounded overflow-hidden position-relative" style="height: 120px; cursor: pointer" @click="selectService(webServices[7])">
-          <img :src="webServices[7].image" class="w-100 h-100 object-cover" />
-          <div class="position-absolute bottom-0 start-0 bg-dark bg-opacity-50 w-100 text-white p-2">
-            <h6 class="mb-0">{{ webServices[7].title }}</h6>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-        <!-- brandingDetails -->
-        <section id="brandingDetails" ref="brandingRef" class="ftco-section ftco-about text-light"
-            data-animate="zoom-in">
-            <div class="container">
-                <!-- Title & Intro -->
-                <div class="row">
-                    <div class="col-md-12 heading-section ftco-animate pb-4 fadeInUp">
-                        <h2 class="mb-2">Branding & UI/UX</h2>
-                        <p class="about-decription mb-0">
-                            We craft visual identities and digital experiences — from logos and brand kits to web/app UI
-                            design tailored for modern businesses.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Sub Services -->
-                <div class="row mb-4">
-                    <!-- Left Column - 30% -->
-                    <div class="col-md-4 d-flex flex-column gap-3">
-                        <!-- Top Large Image with Overlay -->
-                        <div class="position-relative rounded overflow-hidden" style="height: 280px; cursor: pointer"
-                            @click="selectService(brandingServices[0])">
-                            <img :src="brandingServices[0].image || '/images/branding/logo-preview.jpg'"
-                                class="w-100 h-100 object-cover" />
-                            <div
-                                class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 text-white d-flex flex-column justify-content-end p-3">
-                                <h5 class="mb-1">{{ brandingServices[0].title }}</h5>
-                                <p class="mb-0 small">{{ brandingServices[0].description }}</p>
-                            </div>
-                        </div>
-
-                        <!-- 6 Services Grid (2 rows of 3) -->
-                        <div class="row g-2">
-                            <div v-for="(item, index) in brandingServices.slice(1, 7)" :key="index" class="col-4">
-                                <div class="card h-100 text-white bg-dark border-0 rounded shadow-sm service-thumb"
-                                    style="cursor: pointer" @click="selectService(item)">
-                                    <img :src="item.image || '/images/branding/placeholder.jpg'"
-                                        class="card-img-top object-cover rounded-top" style="height: 90px" />
-                                    <div class="card-body p-2">
-                                        <h6 class="card-title mb-0 small">{{ item.title }}</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Extra Bottom Image (7th Thumbnail) -->
-                        <div v-if="brandingServices[7]" class="mt-2 rounded overflow-hidden position-relative"
-                            style="height: 120px; cursor: pointer" @click="selectService(brandingServices[7])">
-                            <img :src="brandingServices[7].image || '/images/branding/placeholder2.jpg'"
-                                class="w-100 h-100 object-cover" />
-                            <div class="position-absolute bottom-0 start-0 bg-dark bg-opacity-50 w-100 text-white p-2">
-                                <h6 class="mb-0">{{ brandingServices[7].title }}</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Column - 70% -->
-                    <div class="col-md-8">
-                        <!-- Carousel Preview (Gallery) -->
-                        <div id="carouselPreviewBranding" class="carousel slide mb-2" data-bs-ride="carousel">
-                            <div class="carousel-inner rounded">
-                                <div v-for="(item, index) in brandingPreviewImages" :key="index" class="carousel-item"
-                                    :class="{ active: index === activeBrandingPreviewIndex }">
-                                    <transition name="fade">
-                                        <img :src="brandingPreviewImages[activeBrandingPreviewIndex]"
-                                            key="brandingPreviewImages[activeBrandingPreviewIndex]"
-                                            class="d-block w-100 object-cover" style="height: 280px" />
-                                    </transition>
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselPreviewBranding" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon"></span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselPreviewBranding" data-bs-slide="next">
-                                <span class="carousel-control-next-icon"></span>
-                            </button>
-                        </div>
-
-                        <!-- Gallery Thumbnails -->
-                        <div class="d-flex gap-2 mb-2 flex-wrap">
-                            <img v-for="(thumb, index) in brandingGalleryThumbs" :key="'thumb-' + index" :src="thumb"
-                                :class="[
-                                    'rounded thumbnail',
-                                    { active: index === activeBrandingPreviewIndex },
-                                ]" style="width: 50px; height: 50px; object-fit: cover; cursor: pointer;"
-                                @click="selectBrandingPreview(index)" />
-                        </div>
-
-                        <!-- Packages -->
-                        <div class="row mb-4 heading-section">
-                            <div class="col-md-12 ftco-animate fadeInUp">
-                                <h2 class="mb-3 mt-4">Packages & Pricing</h2>
-                            </div>
-                            <div class="col-md-4" v-for="(pkg, index) in brandingPackages" :key="index">
-                                <div class="media block-6 services d-block ftco-animate fadeInUp card_service h-100">
-                                    <div class="media-body">
-                                        <h2 class="heading mb-2">{{ pkg.name }}</h2>
-                                        <p class="text-white mb-1">{{ pkg.price }}</p>
-                                        <p class="about-decription mb-0">{{ pkg.details }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- CTA Button -->
-                        <div class="text-end">
-                            <button @click="scrollToSection(contactRef)"
-                                class="btn btn-light px-4 py-2 rounded-pill">Contact Us</button>
-                        </div>
-                    </div>
+                <!-- Fullscreen Image Modal -->
+                <div v-if="modalImage" class="image-modal" @click.self="modalImage = null">
+                    <img :src="modalImage" alt="Full Preview" />
+                    <button class="close-btn" @click="modalImage = null">&times;</button>
                 </div>
             </div>
         </section>
+
+
+        <!-- photographyDetails -->
+        <section id="photography" ref="photographyRef">
+        hello
+        </section>
+
+              <!-- webDetails -->
+        <section id="webDetails" ref="webRef">
+        hello
+        </section>
+
+                      <!-- brandingDetails -->
+        <section id="brandingDetails" ref="brandingRef">
+        hello
+        </section>
+
+
 
 
 
@@ -717,9 +571,9 @@
 <script setup>
 import { ref, onMounted, computed } from "vue";
 
-// Tabs & modal gallery logic
-const activeTab = ref("tab1");
-const modalImage = ref(null);
+// Tabs & modal
+const activeTab = ref('tab1')
+const modalImage = ref(null)
 
 const getImageUrl = (tab, index) => {
     const label = getCategoryName(tab);
@@ -747,253 +601,36 @@ const openModal = (img) => {
     modalImage.value = img;
 };
 
-// Refs for each section
-const photographyRef = ref(null);
-const webRef = ref(null);
-const brandingRef = ref(null);
-const contactRef = ref(null);
+// Refs for section scroll
+const photographyRef = ref(null)
+const webRef = ref(null)
+const brandingRef = ref(null)
 
-const activePreviewIndex = ref(0);
-
-const selectPreview = (index) => {
-    activePreviewIndex.value = index;
-
-    // Optional: If using Bootstrap Carousel's JavaScript API
-    const carouselEl = document.getElementById("carouselPreview");
-    if (carouselEl) {
-        const carousel = bootstrap.Carousel.getInstance(carouselEl);
-        if (carousel) {
-            carousel.to(index);
-        }
-    }
-};
-
-// Scroll to section
 const scrollToSection = (sectionRef) => {
-    sectionRef?.value?.scrollIntoView({ behavior: "smooth" });
-    document.getElementById("photography").scrollIntoView({ behavior: "smooth" });
-};
+  if (sectionRef?.value) {
+    sectionRef.value.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 
 // Animate on scroll
 onMounted(() => {
-    const elements = document.querySelectorAll("[data-animate]");
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("animate");
-                    observer.unobserve(entry.target);
-                }
-            });
-        },
-        { threshold: 0.15 }
-    );
-    elements.forEach((el) => observer.observe(el));
-});
+  const elements = document.querySelectorAll('[data-animate]')
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate')
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.15 }
+  )
+  elements.forEach((el) => observer.observe(el))
+})
 
-// ----------------------------------------
-// Service Content Data for each section
-// ----------------------------------------
-
-const photographyServices = [
-    {
-        title: "Wedding Photography",
-        description: "Candid and traditional moments.",
-        image: "./wedding-thumb.jpg",
-        preview: "/images/services/wedding-preview.jpg",
-        details:
-            "We capture full-day weddings, including rituals, candids, and group portraits. Includes drone shots and cinematic angles.",
-        gallery: [
-            "wedding.jpg",
-            "engagement.jpg",
-            "birthday.jpg",
-            "wedding.jpg",
-            "wedding.jpg",
-        ],
-    },
-
-    {
-        title: "Engagement",
-        description:
-            "Pre-wedding and engagement photography to tell your love story.",
-        image: "/engagement.jpg",
-        preview: "/images/services/engagement-preview.jpg",
-        details:
-            "We plan pre-wedding sessions with beautiful natural or urban settings. Includes styling consultation and location scouting.",
-        gallery: ["engagement.jpg", "engagement2.jpg", "engagement3.jpg"],
-    },
-    {
-        title: "Birthday",
-        description: "Joyful coverage of birthdays — from kids to adults.",
-        image: "/birthday.jpg",
-        preview: "/images/services/birthday-preview.jpg",
-        details:
-            "From cake cutting to candids, we capture every happy moment of your birthday party with creativity and flair.",
-        gallery: ["birthday.jpg", "birthday2.jpg", "birthday3.jpg"],
-    },
-    {
-        title: "Corporate",
-        description: "Event coverage, team portraits, product & branding visuals.",
-        image: "/images/services/corporate.jpg",
-        preview: "/images/services/corporate-preview.jpg",
-        details:
-            "Professional shots for conferences, brand launches, team profiles, and internal functions. Includes indoor and on-site setups.",
-        gallery: ["corporate1.jpg", "corporate2.jpg"],
-    },
-    {
-        title: "Studio Portraits",
-        description:
-            "Indoor portrait sessions with controlled lighting and styling.",
-        image: "/images/services/studio.jpg",
-        preview: "/images/services/studio-preview.jpg",
-        details:
-            "Studio sessions with professional lighting for personal portraits, graduation, LinkedIn, or creative headshots.",
-        gallery: ["studio1.jpg", "studio2.jpg"],
-    },
-    {
-        title: "Product",
-        description: "High-quality e-commerce ready product shots.",
-        image: "/images/services/product.jpg",
-        preview: "/images/services/product-preview.jpg",
-        details:
-            "We provide clean background product photos ideal for marketplaces, websites, and catalogs.",
-        gallery: ["product1.jpg", "product2.jpg"],
-    },
-    {
-        title: "Kids & Family",
-        description: "Fashion and lifestyle photography for portfolios and brands.",
-        image: "/images/services/product.jpg",
-        preview: "/images/services/model-preview.jpg",
-        details:
-            "Stylized photo shoots tailored for models, influencers, or brands. Includes location shoots and pose direction.",
-        gallery: ["model1.jpg", "model2.jpg"],
-    },
-];
-
-const activeServiceIndex = ref(0);
-const selectService = (item) => {
-    const index = photographyServices.findIndex(
-        (service) => service.title === item.title
-    );
-    if (index !== -1) activeServiceIndex.value = index;
-};
-
-const selectedService = computed(
-    () => photographyServices[activeServiceIndex.value]
-);
-const previewImages = computed(() => selectedService.value.gallery || []);
-const galleryThumbs = computed(() => selectedService.value.gallery || []);
-
-const photographyPackages = [
-    {
-        name: "Basic Package",
-        price: "RM 1,000",
-        details: "1 Photographer, 50 Edited Photos, Softcopy Delivery",
-    },
-    {
-        name: "Premium Package",
-        price: "RM 1,800",
-        details: "2 Photographers, All Edited, Album + Frame",
-    },
-    {
-        name: "Event Gold",
-        price: "RM 2,500",
-        details: "Full Day, Cinematic Video, Drone, Premium Album",
-    },
-];
-
-const webServices = [
-    {
-        title: "Corporate Websites",
-        description: "Multi-page websites for SMEs and professional services.",
-    },
-    {
-        title: "One-Page Static Sites",
-        description: "Simple and fast-loading landing pages or personal websites.",
-    },
-    {
-        title: "Basic eCommerce Setup",
-        description:
-            "Start your online store with up to 50 products (Shopify/static).",
-    },
-    {
-        title: "Portfolios",
-        description: "Sites for freelancers, designers, or creative professionals.",
-    },
-    {
-        title: "Landing Pages",
-        description: "Pages for campaigns, ads, or product launches.",
-    },
-    {
-        title: "Hosting & SEO",
-        description:
-            "Help with domains, hosting, Google indexing, and metadata setup.",
-    },
-];
-
-const webPackages = [
-    {
-        name: "Starter",
-        price: "RM 850",
-        details: "One-page static site, responsive and fast-loading.",
-    },
-    {
-        name: "Business Pro",
-        price: "RM 1,800",
-        details: "Up to 6 pages, contact forms, mobile-optimized.",
-    },
-    {
-        name: "Full Suite",
-        price: "RM 2,800",
-        details: "Includes branding, web build, domain, and setup.",
-    },
-];
-
-const brandingServices = [
-    {
-        title: "Logo Design",
-        description: "Custom logo creation aligned with your business identity.",
-    },
-    {
-        title: "Brand Guidelines",
-        description: "Typography, colors, and design rules in a clear PDF guide.",
-    },
-    {
-        title: "Website UI/UX",
-        description: "Modern web UI design using Figma or Adobe XD.",
-    },
-    {
-        title: "App UI/UX",
-        description: "Designing mobile interfaces and user flows for Android/iOS.",
-    },
-    {
-        title: "Social Media Kit",
-        description: "Branded templates for posts, stories, highlights, and ads.",
-    },
-    {
-        title: "Rebranding Services",
-        description: "Refresh or modernize your company’s old branding.",
-    },
-];
-
-const brandingPackages = [
-    {
-        name: "Logo Starter",
-        price: "RM 400",
-        details: "2 logo concepts, 2 revisions, PNG + vector files.",
-    },
-    {
-        name: "Identity Pro",
-        price: "RM 1,200",
-        details: "Logo + color palette + fonts + brand guide PDF.",
-    },
-    {
-        name: "UI/UX Suite",
-        price: "RM 2,500",
-        details: "5–7 screens designed, Figma prototype included.",
-    },
-];
 </script>
+
 
 <style scoped>
 .fade-enter-active,
