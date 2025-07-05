@@ -1974,3 +1974,63 @@ html {
   transform: translateY(-5px);
   transition: all 0.3s ease;
 }
+
+
+.carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+      }
+
+
+
+      .whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(37, 211, 102, 0.6), 0 0 20px rgba(37, 211, 102, 0.3);
+
+}
+
+.whatsapp-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.tooltip-msg {
+  position: absolute;
+  right: 120%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.whatsapp-float:hover .tooltip-msg {
+  opacity: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
