@@ -88,12 +88,14 @@
                             </div>
                         </div>
 
+                        
                         <!-- Photography Service -->
                         <div class="row mb-5">
                             <div class="col-md-4">
                                 <div class="media block-6 services d-block ftco-animate fadeInUp card_service"
                                      @click="handleScroll(photographyRef)">
-                                    <div class="icon">
+                                  
+                                     <div class="icon">
                                         <span class="flaticon-video-camera"></span>
                                     </div>
                                     <div class="media-body">
@@ -749,14 +751,12 @@ const brandingRef = ref(null);
 
 const contactRef = ref(null);
 
-const handleScroll = async (sectionRef) => {
-  await nextTick();
+const handleScroll = (sectionRef) => {
   if (sectionRef?.value) {
     sectionRef.value.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  } else {
-    console.warn('Section ref is not ready');
   }
 };
+
 
 const activePreviewIndex = ref(0);
 

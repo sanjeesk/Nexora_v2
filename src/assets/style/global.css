@@ -12,6 +12,13 @@ body {
 }
 
 
+html,
+body {
+  overflow-y: auto;
+  height: auto;
+}
+
+
 
 body {
   margin: 0;
