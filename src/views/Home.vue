@@ -346,95 +346,99 @@
             </div>
         </section>
 
-        <!-- webDetails -->
-        <section id="webDetails" ref="webRef" class="ftco-section text-light" data-animate="zoom-in">
+
+        <!-- photographyDetails -->
+         <section id="photography" class="section-wrapper">
   <div class="container">
-    <!-- Title & Intro -->
-    <div class="row">
-      <div class="col-md-12 heading-section ftco-animate pb-4 fadeInUp">
-        <h2 class="mb-2">Web Design & Development</h2>
-        <p class="about-decription mb-0">
-          We build performance-driven websites — from portfolios and business sites to scalable e-commerce platforms.
-        </p>
+    <h2>Photography Services</h2>
+
+    <!-- Sub-services -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+      <div
+        v-for="(item, index) in photographyServices"
+        :key="index"
+        class="service-card"
+        data-animate="fade-up"
+      >
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
       </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="row mb-4">
-      <!-- Left Column - 70% (Main Content) -->
-      <div class="col-md-8">
-        <!-- Carousel Preview -->
-        <div class="carousel slide mb-3" id="carouselWebPreview" data-bs-ride="carousel">
-          <div class="carousel-inner rounded">
-            <div
-              v-for="(item, index) in webPreviewImages"
-              :key="index"
-              class="carousel-item"
-              :class="{ active: index === activeWebPreviewIndex }"
-            >
-              <transition name="fade">
-                <img
-                  :src="webPreviewImages[activeWebPreviewIndex]"
-                  class="d-block w-100 object-cover"
-                  style="height: 280px"
-                />
-              </transition>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselWebPreview" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselWebPreview" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
+    <!-- Past Work -->
+    <div class="past-work mb-12">
+      <h3 class="text-2xl font-bold">Past Work</h3>
+      <ul>
+        <li>Indian Wedding – KL 2024</li>
+        <li>Birthday Shoot – Shah Alam</li>
+        <li>Corporate Launch – PJ</li>
+      </ul>
+    </div>
+
+    <!-- Packages -->
+    <div>
+      <h3 class="text-2xl font-bold mb-4">Packages & Pricing</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          v-for="(pkg, index) in photographyPackages"
+          :key="index"
+          class="package-box"
+        >
+          <h4>{{ pkg.name }}</h4>
+          <p class="mb-1">{{ pkg.price }}</p>
+          <p>{{ pkg.details }}</p>
         </div>
+      </div>
 
-        <!-- Gallery Thumbnails -->
-        <div class="d-flex gap-2 mb-2 flex-wrap">
-          <img
-            v-for="(thumb, index) in webGalleryThumbs"
-            :key="'web-thumb-' + index"
-            :src="thumb"
-            :class="['rounded thumbnail', { active: index === activeWebPreviewIndex }]"
-            style="width: 50px; height: 50px; object-fit: cover; cursor: pointer"
-            @click="selectWebPreview(index)"
-          />
-        </div>
-
-        <!-- Packages -->
-        <div class="row mb-4 heading-section">
-          <div class="col-md-12 ftco-animate fadeInUp">
-            <h2 class="mb-3 mt-4">Packages & Pricing</h2>
-          </div>
-          <div class="col-md-4" v-for="(pkg, index) in webPackages" :key="index">
-            <div class="media block-6 services d-block ftco-animate fadeInUp card_service h-100">
-              <div class="media-body">
-                <h2 class="heading mb-2">{{ pkg.name }}</h2>
-                <p class="text-white mb-1">{{ pkg.price }}</p>
-                <p class="about-decription mb-0">{{ pkg.details }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="text-center">
+        <button @click="scrollToSection(contactRef)" class="section-cta">
+          Contact Us
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-                <!-- Fullscreen Image Modal -->
-                <div v-if="modalImage" class="image-modal" @click.self="modalImage = null">
-                    <img :src="modalImage" alt="Full Preview" />
-                    <button class="close-btn" @click="modalImage = null">&times;</button>
-                </div>
-            </div>
-        </section>
 
-
-        <!-- photographyDetails -->
-        <section id="photography" ref="photographyRef">
-        hello
-        </section>
 
               <!-- webDetails -->
         <section id="webDetails" ref="webRef">
-        hello
+            <h2 class="text-3xl font-bold mb-8 text-center">Web Services</h2>
+
+  <!-- Sub-services -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <div v-for="(item, index) in webServices" :key="index" class="bg-white rounded-xl p-6 shadow-md text-black">
+      <h3 class="text-lg font-semibold mb-2">{{ item.title }}</h3>
+      <p class="text-sm text-gray-600">{{ item.description }}</p>
+    </div>
+  </div>
+
+  <!-- Past Work -->
+  <div class="mb-12">
+    <h3 class="text-2xl font-semibold mb-4">Past Work</h3>
+    <ul class="list-disc pl-6 text-sm text-gray-300">
+      <li>Portfolio for freelance designer – Vue + Tailwind</li>
+      <li>Corporate website – Tuition Centre KL</li>
+      <li>Landing page for FB ads – Event Planner</li>
+      <li>Mini store setup for home baker – Shopify</li>
+    </ul>
+  </div>
+
+  <!-- Packages -->
+  <div>
+    <h3 class="text-2xl font-semibold mb-4">Packages & Pricing</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
+      <div v-for="(pkg, index) in webPackages" :key="index" class="bg-black border border-white p-4 rounded-xl">
+        <h4 class="text-lg font-semibold">{{ pkg.name }}</h4>
+        <p class="text-gray-400 mb-2">{{ pkg.price }}</p>
+        <p class="text-sm text-gray-300">{{ pkg.details }}</p>
+      </div>
+    </div>
+    <button @click="scrollToSection(contactRef)" class="bg-white text-black px-6 py-2 rounded-xl mt-4">
+      Contact Us
+    </button>
+  </div>
         </section>
 
                       <!-- brandingDetails -->
@@ -629,6 +633,60 @@ onMounted(() => {
   elements.forEach((el) => observer.observe(el))
 })
 
+// ----------------------------------------
+// Service Content Data for each section
+// ----------------------------------------
+
+// Photography Sub-services
+const photographyServices = [
+  { title: 'Indian Wedding Photography', description: 'Traditional and candid wedding coverage for Indian ceremonies in Malaysia.' },
+  { title: 'Engagement Shoots', description: 'Creative pre-wedding couple shoots with styled settings.' },
+  { title: 'Birthday & Events', description: 'Coverage for 1st birthdays, baby showers, and special private events.' },
+  { title: 'Corporate Events', description: 'Formal photography for launches, dinners, and office functions.' },
+  { title: 'Studio Portraits', description: 'Indoor portraits for couples, families, or individuals.' },
+  { title: 'Product Photography', description: 'Clean shots for businesses — ideal for websites and online catalogs.' }
+]
+
+// Photography Packages
+const photographyPackages = [
+  { name: 'Basic', price: 'RM 1,000', details: '1 photographer, 50 edited photos, Google Drive delivery.' },
+  { name: 'Premium', price: 'RM 1,800', details: 'Full-day coverage, 100 edits, framed photo included.' },
+  { name: 'Elite', price: 'RM 2,500', details: '2 photographers, video highlights, full album + framed prints.' }
+]
+
+// Web Services Sub-services
+const webServices = [
+  { title: 'Corporate Websites', description: 'Multi-page websites for SMEs and professional services.' },
+  { title: 'One-Page Static Sites', description: 'Simple and fast-loading landing pages or personal websites.' },
+  { title: 'Basic eCommerce Setup', description: 'Start your online store with up to 50 products (Shopify/static).' },
+  { title: 'Portfolios', description: 'Sites for freelancers, designers, or creative professionals.' },
+  { title: 'Landing Pages', description: 'Pages for campaigns, ads, or product launches.' },
+  { title: 'Hosting & SEO', description: 'Help with domains, hosting, Google indexing, and metadata setup.' }
+]
+
+// Web Packages
+const webPackages = [
+  { name: 'Starter', price: 'RM 850', details: 'One-page static site, responsive and fast-loading.' },
+  { name: 'Business Pro', price: 'RM 1,800', details: 'Up to 6 pages, contact forms, mobile-optimized.' },
+  { name: 'Full Suite', price: 'RM 2,800', details: 'Includes branding, web build, domain, and setup.' }
+]
+
+// Branding Sub-services
+const brandingServices = [
+  { title: 'Logo Design', description: 'Custom logo creation aligned with your business identity.' },
+  { title: 'Brand Guidelines', description: 'Typography, colors, and design rules in a clear PDF guide.' },
+  { title: 'Website UI/UX', description: 'Modern web UI design using Figma or Adobe XD.' },
+  { title: 'App UI/UX', description: 'Designing mobile interfaces and user flows for Android/iOS.' },
+  { title: 'Social Media Kit', description: 'Branded templates for posts, stories, highlights, and ads.' },
+  { title: 'Rebranding Services', description: 'Refresh or modernize your company’s old branding.' }
+]
+
+// Branding Packages
+const brandingPackages = [
+  { name: 'Logo Starter', price: 'RM 400', details: '2 logo concepts, 2 revisions, PNG + vector files.' },
+  { name: 'Identity Pro', price: 'RM 1,200', details: 'Logo + color palette + fonts + brand guide PDF.' },
+  { name: 'UI/UX Suite', price: 'RM 2,500', details: '5–7 screens designed, Figma prototype included.' }
+]
 </script>
 
 
