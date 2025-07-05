@@ -258,64 +258,85 @@
         </section>
 
 
+        
         <!-- photographyDetails -->
-         <section id="photography" class="section-wrapper">
-  <div class="max-w-7xl mx-auto px-4">
-    <!-- Title -->
-    <div class="text-center mb-16">
-      <h2 class="section-title">Photography Services</h2>
-      <p class="text-gray-400 text-sm max-w-2xl mx-auto">
-        We offer professional photography for weddings, birthdays, engagements, corporate events & more.
-      </p>
+         <section id="photography" ref="photographyRef" class="ftco-section bg-dark text-light" data-animate="zoom-in">
+  <div class="container">
+    <!-- Title & Intro -->
+    <div class="row">
+      <div class="col-md-12 heading-section ftco-animate pb-5 fadeInUp">
+        <h2 class="mb-2">Photography Services</h2>
+        <p class="about-decription mb-0">
+          We capture timeless memories — from Indian weddings and engagements to birthdays and corporate events across Malaysia.
+        </p>
+      </div>
     </div>
 
-    <!-- Sub-Services -->
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-20">
+    <!-- Sub Services -->
+    <div class="row mb-5">
       <div
+        class="col-md-4"
         v-for="(item, index) in photographyServices"
         :key="index"
-        class="service-card"
-        data-animate="fade-up"
       >
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
+        <div class="media block-6 services d-block ftco-animate fadeInUp card_service h-100">
+          <div class="icon"><span class="flaticon-photo-camera"></span></div>
+          <div class="media-body">
+            <h3 class="heading mb-2">{{ item.title }}</h3>
+            <p class="about-decription mb-0">{{ item.description }}</p>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Past Work -->
-    <div class="mb-20" data-animate="fade-up">
-      <h3 class="text-2xl font-bold mb-4">Past Work</h3>
-      <ul class="list-disc list-inside text-gray-400 space-y-2 pl-4">
-        <li>Indian Wedding – KL 2024</li>
-        <li>Birthday Shoot – Shah Alam</li>
-        <li>Corporate Launch – PJ</li>
-      </ul>
+    <div class="row mb-5">
+      <div class="col-md-12 ftco-animate fadeInUp">
+        <h3 class="mb-4">Past Work</h3>
+        <ul class="list-unstyled about-decription ps-3">
+          <li class="mb-2">📸 Indian Wedding – KL 2024</li>
+          <li class="mb-2">🎉 Birthday Shoot – Shah Alam</li>
+          <li class="mb-2">🏢 Corporate Launch – PJ</li>
+        </ul>
+      </div>
     </div>
 
     <!-- Packages -->
-    <div class="mb-12" data-animate="fade-up">
-      <h3 class="text-2xl font-bold mb-6">Packages & Pricing</h3>
-      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div
-          v-for="(pkg, index) in photographyPackages"
-          :key="index"
-          class="package-box"
-        >
-          <h4>{{ pkg.name }}</h4>
-          <p>{{ pkg.price }}</p>
-          <p>{{ pkg.details }}</p>
+    <div class="row mb-5">
+      <div class="col-md-12 ftco-animate fadeInUp">
+        <h3 class="mb-4">Packages & Pricing</h3>
+      </div>
+
+      <div
+        class="col-md-4"
+        v-for="(pkg, index) in photographyPackages"
+        :key="index"
+      >
+        <div class="media block-6 services d-block ftco-animate fadeInUp card_service h-100">
+          <div class="media-body">
+            <h4 class="heading mb-2">{{ pkg.name }}</h4>
+            <p class="text-white mb-1">{{ pkg.price }}</p>
+            <p class="about-decription mb-0">{{ pkg.details }}</p>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- CTA -->
-    <div class="text-center">
-      <button @click="scrollToSection(contactRef)" class="section-cta">
-        Contact Us
-      </button>
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center">
+        <button
+          @click="scrollToSection(contactRef)"
+          class="btn btn-primary py-3 px-5"
+        >
+          Contact Us
+        </button>
+      </div>
     </div>
   </div>
 </section>
+
+
 
 
 
@@ -552,6 +573,8 @@ const contactRef = ref(null)
 // Scroll to section
 const scrollToSection = (sectionRef) => {
   sectionRef?.value?.scrollIntoView({ behavior: 'smooth' })
+  document.getElementById('photography').scrollIntoView({ behavior: 'smooth' })
+
 }
 
 // Animate on scroll

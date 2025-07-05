@@ -1894,15 +1894,12 @@ html {
   background-color: #000;
   color: #fff;
 }
-
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
 }
-
-/* Cards */
 .service-card {
   background-color: #111;
   border: 1px solid #2a2a2a;
@@ -1914,27 +1911,11 @@ html {
   justify-content: space-between;
   transition: all 0.3s ease;
 }
-
 .service-card:hover {
   border-color: #fff;
   box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
   transform: translateY(-4px) scale(1.015);
 }
-
-.service-card h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  color: #fff;
-}
-
-.service-card p {
-  font-size: 0.9rem;
-  color: #bbb;
-  line-height: 1.6;
-}
-
-/* Past Work + Package Boxes */
 .package-box {
   background-color: #1a1a1a;
   border: 1px solid #333;
@@ -1942,26 +1923,10 @@ html {
   padding: 1.5rem;
   transition: all 0.3s ease;
 }
-
 .package-box:hover {
   border-color: #fff;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
 }
-
-.package-box h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-
-.package-box p {
-  font-size: 0.85rem;
-  color: #ccc;
-  line-height: 1.5;
-}
-
-/* CTA */
 .section-cta {
   background-color: #fff;
   color: #000;
@@ -1970,19 +1935,42 @@ html {
   border-radius: 9999px;
   transition: 0.3s ease;
 }
-
 .section-cta:hover {
   background-color: #e4e4e4;
 }
-
-/* Animate On Scroll */
 [data-animate] {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s ease-out;
 }
-
 [data-animate].animate {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.letter-spacing {
+  letter-spacing: 0.05em;
+}
+
+.section-desc {
+  color: #aaa;
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.text-gray-soft {
+  color: #aaa !important;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
 }
