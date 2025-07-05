@@ -357,121 +357,114 @@
 
         <!-- webDetails -->
         <section id="webDetails" ref="webRef" class="ftco-section text-light" data-animate="zoom-in">
-  <div class="container">
-    <!-- Title & Intro -->
-    <div class="row">
-      <div class="col-md-12 heading-section ftco-animate pb-4 fadeInUp">
-        <h2 class="mb-2">Web Design & Development</h2>
-        <p class="about-decription mb-0">
-          We build performance-driven websites — from portfolios and business sites to scalable e-commerce platforms.
-        </p>
-      </div>
-    </div>
+            <div class="container">
+                <!-- Title & Intro -->
+                <div class="row">
+                    <div class="col-md-12 heading-section ftco-animate pb-4 fadeInUp">
+                        <h2 class="mb-2">Web Design & Development</h2>
+                        <p class="about-decription mb-0">
+                            We build performance-driven websites — from portfolios and business sites to scalable
+                            e-commerce platforms.
+                        </p>
+                    </div>
+                </div>
 
-    <!-- Main Content -->
-    <div class="row mb-4">
-      <!-- Left Column - 70% (Main Content) -->
-      <div class="col-md-8">
-        <!-- Carousel Preview -->
-        <div class="carousel slide mb-3" id="carouselWebPreview" data-bs-ride="carousel">
-          <div class="carousel-inner rounded">
-            <div
-              v-for="(item, index) in webPreviewImages"
-              :key="index"
-              class="carousel-item"
-              :class="{ active: index === activeWebPreviewIndex }"
-            >
-              <transition name="fade">
-                <img
-                  :src="webPreviewImages[activeWebPreviewIndex]"
-                  class="d-block w-100 object-cover"
-                  style="height: 280px"
-                />
-              </transition>
+                <!-- Main Content -->
+                <div class="row mb-4">
+                    <!-- Left Column - 70% (Main Content) -->
+                    <div class="col-md-8">
+                        <!-- Carousel Preview -->
+                        <div class="carousel slide mb-3" id="carouselWebPreview" data-bs-ride="carousel">
+                            <div class="carousel-inner rounded">
+                                <div v-for="(item, index) in webPreviewImages" :key="index" class="carousel-item"
+                                    :class="{ active: index === activeWebPreviewIndex }">
+                                    <transition name="fade">
+                                        <img :src="webPreviewImages[activeWebPreviewIndex]"
+                                            class="d-block w-100 object-cover" style="height: 280px" />
+                                    </transition>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselWebPreview"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselWebPreview"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+
+                        <!-- Gallery Thumbnails -->
+                        <div class="d-flex gap-2 mb-2 flex-wrap">
+                            <img v-for="(thumb, index) in webGalleryThumbs" :key="'web-thumb-' + index" :src="thumb"
+                                :class="['rounded thumbnail', { active: index === activeWebPreviewIndex }]"
+                                style="width: 50px; height: 50px; object-fit: cover; cursor: pointer"
+                                @click="selectWebPreview(index)" />
+                        </div>
+
+                        <!-- Packages -->
+                        <div class="row mb-4 heading-section">
+                            <div class="col-md-12 ftco-animate fadeInUp">
+                                <h2 class="mb-3 mt-4">Packages & Pricing</h2>
+                            </div>
+                            <div class="col-md-4" v-for="(pkg, index) in webPackages" :key="index">
+                                <div class="media block-6 services d-block ftco-animate fadeInUp card_service h-100">
+                                    <div class="media-body">
+                                        <h2 class="heading mb-2">{{ pkg.name }}</h2>
+                                        <p class="text-white mb-1">{{ pkg.price }}</p>
+                                        <p class="about-decription mb-0">{{ pkg.details }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="text-end">
+                            <button class="btn btn-light px-4 py-2 rounded-pill" @click="scrollToSection(contactRef)">
+                                Contact Us
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Column - 30% (Subservices) -->
+                    <div class="col-md-4 d-flex flex-column gap-3">
+                        <!-- Large Main Service -->
+                        <div class="position-relative rounded overflow-hidden" style="height: 280px; cursor: pointer"
+                            @click="selectService(webServices[0])">
+                            <img :src="webServices[0].image" class="w-100 h-100 object-cover" />
+                            <div
+                                class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 text-white d-flex flex-column justify-content-end p-3">
+                                <h5 class="mb-1">{{ webServices[0].title }}</h5>
+                                <p class="mb-0 small">{{ webServices[0].description }}</p>
+                            </div>
+                        </div>
+
+                        <!-- 6 Sub Services -->
+                        <div class="row g-2">
+                            <div v-for="(item, index) in webServices.slice(1, 7)" :key="index" class="col-4">
+                                <div class="card h-100 bg-dark text-white border-0 rounded shadow-sm service-thumb"
+                                    style="cursor: pointer" @click="selectService(item)">
+                                    <img :src="item.image" class="card-img-top object-cover rounded-top"
+                                        style="height: 90px" />
+                                    <div class="card-body p-2">
+                                        <h6 class="card-title mb-0 small">{{ item.title }}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Optional 7th Thumbnail -->
+                        <div v-if="webServices[7]" class="mt-2 rounded overflow-hidden position-relative"
+                            style="height: 120px; cursor: pointer" @click="selectService(webServices[7])">
+                            <img :src="webServices[7].image" class="w-100 h-100 object-cover" />
+                            <div class="position-absolute bottom-0 start-0 bg-dark bg-opacity-50 w-100 text-white p-2">
+                                <h6 class="mb-0">{{ webServices[7].title }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselWebPreview" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselWebPreview" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
-        </div>
-
-        <!-- Gallery Thumbnails -->
-        <div class="d-flex gap-2 mb-2 flex-wrap">
-          <img
-            v-for="(thumb, index) in webGalleryThumbs"
-            :key="'web-thumb-' + index"
-            :src="thumb"
-            :class="['rounded thumbnail', { active: index === activeWebPreviewIndex }]"
-            style="width: 50px; height: 50px; object-fit: cover; cursor: pointer"
-            @click="selectWebPreview(index)"
-          />
-        </div>
-
-        <!-- Packages -->
-        <div class="row mb-4 heading-section">
-          <div class="col-md-12 ftco-animate fadeInUp">
-            <h2 class="mb-3 mt-4">Packages & Pricing</h2>
-          </div>
-          <div class="col-md-4" v-for="(pkg, index) in webPackages" :key="index">
-            <div class="media block-6 services d-block ftco-animate fadeInUp card_service h-100">
-              <div class="media-body">
-                <h2 class="heading mb-2">{{ pkg.name }}</h2>
-                <p class="text-white mb-1">{{ pkg.price }}</p>
-                <p class="about-decription mb-0">{{ pkg.details }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CTA -->
-        <div class="text-end">
-          <button class="btn btn-light px-4 py-2 rounded-pill" @click="scrollToSection(contactRef)">
-            Contact Us
-          </button>
-        </div>
-      </div>
-
-      <!-- Right Column - 30% (Subservices) -->
-      <div class="col-md-4 d-flex flex-column gap-3">
-        <!-- Large Main Service -->
-        <div class="position-relative rounded overflow-hidden" style="height: 280px; cursor: pointer" @click="selectService(webServices[0])">
-          <img :src="webServices[0].image" class="w-100 h-100 object-cover" />
-          <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 text-white d-flex flex-column justify-content-end p-3">
-            <h5 class="mb-1">{{ webServices[0].title }}</h5>
-            <p class="mb-0 small">{{ webServices[0].description }}</p>
-          </div>
-        </div>
-
-        <!-- 6 Sub Services -->
-        <div class="row g-2">
-          <div v-for="(item, index) in webServices.slice(1, 7)" :key="index" class="col-4">
-            <div
-              class="card h-100 bg-dark text-white border-0 rounded shadow-sm service-thumb"
-              style="cursor: pointer"
-              @click="selectService(item)"
-            >
-              <img :src="item.image" class="card-img-top object-cover rounded-top" style="height: 90px" />
-              <div class="card-body p-2">
-                <h6 class="card-title mb-0 small">{{ item.title }}</h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Optional 7th Thumbnail -->
-        <div v-if="webServices[7]" class="mt-2 rounded overflow-hidden position-relative" style="height: 120px; cursor: pointer" @click="selectService(webServices[7])">
-          <img :src="webServices[7].image" class="w-100 h-100 object-cover" />
-          <div class="position-absolute bottom-0 start-0 bg-dark bg-opacity-50 w-100 text-white p-2">
-            <h6 class="mb-0">{{ webServices[7].title }}</h6>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        </section>
 
 
         <!-- brandingDetails -->
@@ -771,7 +764,9 @@ const selectPreview = (index) => {
 // Scroll to section
 const scrollToSection = (sectionRef) => {
     sectionRef?.value?.scrollIntoView({ behavior: "smooth" });
-    document.getElementById("photography").scrollIntoView({ behavior: "smooth" });
+    // document.getElementById("photography").scrollIntoView({ behavior: "smooth" });
+    // document.getElementById("webDetails").scrollIntoView({ behavior: "smooth" });
+    // document.getElementById("brandingDetails").scrollIntoView({ behavior: "smooth" });
 };
 
 // Animate on scroll
