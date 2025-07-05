@@ -1985,3 +1985,30 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.letter-spacing {
+  letter-spacing: 0.05em;
+}
+
+.section-desc {
+  color: #aaa;
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.text-gray-soft {
+  color: #aaa !important;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
