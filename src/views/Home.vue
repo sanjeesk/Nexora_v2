@@ -92,7 +92,7 @@
                         <div class="row mb-5">
                             <div class="col-md-4">
                                 <div class="media block-6 services d-block ftco-animate fadeInUp card_service"
-                                    @click="scrollToSection(photographyRef)">
+                                     @click="handleScroll(photographyRef)">
                                     <div class="icon">
                                         <span class="flaticon-video-camera"></span>
                                     </div>
@@ -113,7 +113,7 @@
                             <div class="col-md-4">
                                 <div id="webDetails"
                                     class="media block-6 services d-block ftco-animate fadeInUp card_service"
-                                    @click="scrollToSection(webRef)">
+                                   @click="handleScroll(webRef)">
                                     <div class="icon">
                                         <span class="flaticon-video-player"></span>
                                     </div>
@@ -134,7 +134,7 @@
                             <div class="col-md-4">
                                 <div id="brandingDetails"
                                     class="media block-6 services d-block ftco-animate fadeInUp card_service"
-                                    @click="scrollToSection(brandingRef)">
+                                   @click="handleScroll(brandingRef)">
                                     <div class="icon">
                                         <span class="flaticon-video-player-1"></span>
                                     </div>
@@ -237,7 +237,7 @@
         </section>
 
         <!-- photographyDetails -->
-        <section id="photography" ref="photographyRef" class="ftco-section ftco-about text-light"
+        <section ref="photographyRef" id="photography"  class="ftco-section ftco-about text-light"
             data-animate="zoom-in">
             <div class="container">
                 <!-- Title & Intro -->
@@ -356,7 +356,7 @@
         </section>
 
         <!-- webDetails -->
-        <section id="webDetails" ref="webRef" class="ftco-section text-light" data-animate="zoom-in">
+        <section ref="webRef" id="webDetails" class="ftco-section text-light" data-animate="zoom-in">
             <div class="container">
                 <!-- Title & Intro -->
                 <div class="row">
@@ -468,7 +468,7 @@
 
 
         <!-- brandingDetails -->
-        <section id="brandingDetails" ref="brandingRef" class="ftco-section ftco-about text-light"
+        <section ref="brandingRef" id="brandingDetails"  class="ftco-section ftco-about text-light"
             data-animate="zoom-in">
             <div class="container">
                 <!-- Title & Intro -->
@@ -709,6 +709,8 @@
 
 <script setup>
 import { ref, onMounted, computed } from "vue";
+import { nextTick } from 'vue';
+
 
 // Tabs & modal gallery logic
 const activeTab = ref("tab1");
@@ -744,7 +746,17 @@ const openModal = (img) => {
 const photographyRef = ref(null);
 const webRef = ref(null);
 const brandingRef = ref(null);
+
 const contactRef = ref(null);
+
+const handleScroll = async (sectionRef) => {
+  await nextTick();
+  if (sectionRef?.value) {
+    sectionRef.value.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    console.warn('Section ref is not ready');
+  }
+};
 
 const activePreviewIndex = ref(0);
 
@@ -761,13 +773,6 @@ const selectPreview = (index) => {
     }
 };
 
-// Scroll to section
-const scrollToSection = (sectionRef) => {
-    sectionRef?.value?.scrollIntoView({ behavior: "smooth" });
-    // document.getElementById("photography").scrollIntoView({ behavior: "smooth" });
-    // document.getElementById("webDetails").scrollIntoView({ behavior: "smooth" });
-    // document.getElementById("brandingDetails").scrollIntoView({ behavior: "smooth" });
-};
 
 // Animate on scroll
 onMounted(() => {
