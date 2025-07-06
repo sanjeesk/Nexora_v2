@@ -21,62 +21,58 @@
                 <!-- <a href="#" class="hero-contact-btn">Contact us <span class="ion-ios-arrow-round-forward"></span></a> -->
             </div>
 
-            <button @click="handleScrollById('startNew')" class="hero-scroll-btn border-0 bg-transparent text-white">
+            <button style="z-index: 10;" @click="handleScrollById('startNew')"
+                class="hero-scroll-btn border-0 bg-transparent text-white">
                 <i class="fas fa-chevron-down fa-2x"></i>
             </button>
         </section>
 
         <!-- About -->
-        <section class="ftco-about img ftco-section" id="about" data-animate="fade-left">
-            <div class="container">
+        <section id="about" class="ftco-about img ftco-section" data-animate="fade-left">
+            <div id="startNew" class="container">
                 <div class="row d-flex no-gutters">
                     <div class="col-md-6 col-lg-6 d-flex">
-                        <div class="left-img"></div>
+                        <div class="about-web"></div>
                     </div>
                     <div class="col-md-6 col-lg-6 pl-md-5">
-                        <div id="startNew" ref="startNewRef"
-                            class="heading-section ftco-animate fadeInUp ftco-animated">
+                        <div class="heading-section ftco-animate fadeInUp ftco-animated">
                             <h2 class="mb-4">
-                                We Are Nexora Pixel Solutions — <br />A Visual & Digital
-                                Creative Agency
+                                We Are Nexora Pixel Solutions — <br />A Visual & Digital Creative Agency
                             </h2>
                             <p class="about-decription">
-                                At Nexora, we specialize in capturing moments, crafting digital
-                                presence, and building brands that last. Whether it’s through
-                                the lens of a camera, the pixels of a website, or the essence of
-                                a logo, we bring your ideas to life with clarity and creativity.
-                                <br />
-                                Based in Malaysia, we work with clients across events, personal
-                                brands, startups, and companies to deliver standout photography,
-                                high-performing websites, and cohesive brand identities.
+
+                                At Nexora, we specialize in capturing moments, crafting digital presence,
+                                and building brands that last. Whether it’s through the lens of a camera,
+                                the pixels of a website, or the essence of a logo, we bring your ideas to life
+                                with clarity and creativity.
+
+
+                            <div style="padding-top: 10px;">
+                                <p class="about-decription">
+                                    Based in Malaysia, we work with clients across events, personal brands,
+                                    startups, and companies to deliver standout photography, high-performing
+                                    websites, and cohesive brand identities. </p>
+                            </div>
                             </p>
 
-                            <div class="project_120">
+                            <!-- <div class="project_120">
                                 <span>120</span>
                                 <span class="project_120_left">Project complete</span>
+                            </div> -->
+
+                            <div class="d-flex w-100 justify-content-start align-items-center gap-4">
+                                <i class="fas fa-camera-retro fa-1x text-white" title="Photography"></i>
+                                <i class="fas fa-code fa-1x text-white" title="Web Services"></i>
+                                <i class="fas fa-bullhorn fa-1x text-white" title="Branding"></i>
                             </div>
 
-                            <div class="d-flex w-100">
-                                <div class="img img-about-2 mr-2">
-                                    <div class="right-img1"></div>
-                                </div>
-                                <div class="img img-about-2 ml-2">
-                                    <div class="right-img2"></div>
-                                </div>
-                            </div>
 
-                            <div class="blockquote mt-5">
-                                <p class="mb-2">
-                                    "We don't just deliver visuals — we shape your story through
-                                    powerful, pixel-perfect experiences."
-                                </p>
-                                <span>— Sri, Creative Director</span>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
         <!-- Services -->
         <section id="services" class="ftco-section" data-animate="zoom-in">
@@ -87,52 +83,86 @@
                             <div class="col-md-12 heading-section ftco-animate pb-5 fadeInUp ftco-animated">
                                 <h2 class="mb-2">Our Creative Services</h2>
                                 <p class="about-decription" style="margin-bottom: 0 !important">
-                                    From capturing timeless visuals to building impactful online
-                                    presence, we craft brands that connect and convert.
+                                    We help businesses grow through strong visuals and smart digital solutions. From
+                                    professional photography to modern websites and brand design, our work is made to
+                                    attract customers, build trust, and drive sales online.
+                                    <br>
+                                    We work closely with each client to understand their goals and deliver creative
+                                    solutions that make a real impact. Whether you're launching a new brand or improving
+                                    your online presence, our team is here to help you stand out and succeed in the
+                                    digital world.
+
+
+
+
                                 </p>
                             </div>
                         </div>
 
                         <!-- Photography Service -->
                         <div class="row mb-5">
+
+                            <!-- Photography -->
                             <div class="col-md-4">
                                 <div class="media block-6 services d-block ftco-animate fadeInUp card_service"
                                     @click="handleScrollById('photographyDetails')">
-                                    <div class="icon">
-                                        <span class="flaticon-video-camera"></span>
+
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+
+                                            <!-- FRONT -->
+                                            <div
+                                                class="flip-card-front d-flex flex-column justify-content-center align-items-center animated-front">
+                                                <i class="fas fa-camera-retro fa-4x text-white"></i>
+                                                <h5 class="text-white mt-3 text-center">Photography<br>Services</h5>
+                                            </div>
+
+                                            <!-- BACK -->
+                                            <div
+                                                class="flip-card-back d-flex flex-column justify-content-center align-items-center text-center p-4">
+                                                <p class="text-white mb-4">
+                                                    We provide professional photography services including event
+                                                    coverage,
+                                                    studio portraits, lifestyle shoots, and product photography.
+                                                </p>
+                                                <button class="btn btn-light">View More</button>
+                                            </div>
+
+                                        </div>
                                     </div>
-                                    <div class="media-body">
-                                        <h3 class="heading mb-2" style="color: #9da1a5">
-                                            Photography
-                                        </h3>
-                                        <p class="about-decription" style="margin-bottom: 0 !important">
-                                            We provide professional photography services including
-                                            event coverage, studio portraits, lifestyle shoots, and
-                                            product photography.
-                                        </p>
-                                    </div>
+
                                 </div>
                             </div>
 
                             <!-- Web Services -->
                             <div class="col-md-4">
-                                <!-- <div @click="handleScrollById('webDetails')">Web Services</div> -->
-
                                 <div class="media block-6 services d-block ftco-animate fadeInUp card_service"
                                     @click="handleScrollById('webDetails')">
-                                    <div class="icon">
-                                        <span class="flaticon-video-player"></span>
+
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+
+                                            <!-- FRONT -->
+                                            <div
+                                                class="flip-card-front d-flex flex-column justify-content-center align-items-center animated-front">
+                                                <i class="fas fa-code fa-4x text-white"></i>
+                                                <h5 class="text-white mt-3 text-center">Web Services<br>Development</h5>
+                                            </div>
+
+                                            <!-- BACK -->
+                                            <div
+                                                class="flip-card-back d-flex flex-column justify-content-center align-items-center text-center p-4">
+                                                <p class="text-white mb-4">
+                                                    We design modern, fast, and responsive websites tailored to your
+                                                    business goals —
+                                                    from landing pages to full e-commerce stores.
+                                                </p>
+                                                <button class="btn btn-light">View More</button>
+                                            </div>
+
+                                        </div>
                                     </div>
-                                    <div class="media-body">
-                                        <h3 class="heading mb-2" style="color: #9da1a5">
-                                            Web Services
-                                        </h3>
-                                        <p class="about-decription" style="margin-bottom: 0 !important">
-                                            We design modern, fast, and responsive websites tailored
-                                            to your business goals — from landing pages to full
-                                            e-commerce stores.
-                                        </p>
-                                    </div>
+
                                 </div>
                             </div>
 
@@ -140,27 +170,41 @@
                             <div class="col-md-4">
                                 <div class="media block-6 services d-block ftco-animate fadeInUp card_service"
                                     @click="handleScrollById('brandingDetails')">
-                                    <div class="icon">
-                                        <span class="flaticon-video-player-1"></span>
+
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+
+                                            <!-- FRONT -->
+                                            <div
+                                                class="flip-card-front d-flex flex-column justify-content-center align-items-center animated-front">
+                                                <i class="fas fa-bullhorn fa-4x text-white"></i>
+                                                <h5 class="text-white mt-3 text-center">Branding<br>UI & UX</h5>
+                                            </div>
+
+                                            <!-- BACK -->
+                                            <div
+                                                class="flip-card-back d-flex flex-column justify-content-center align-items-center text-center p-4">
+                                                <p class="text-white mb-4">
+                                                    We build bold, beautiful brand identities from scratch or refine
+                                                    your existing brand
+                                                    to stand out in today’s crowded marketplace.
+                                                </p>
+                                                <button class="btn btn-light">View More</button>
+                                            </div>
+
+                                        </div>
                                     </div>
-                                    <div class="media-body">
-                                        <h3 class="heading mb-2" style="color: #9da1a5">
-                                            Branding
-                                        </h3>
-                                        <p class="about-decription" style="margin-bottom: 0 !important">
-                                            We build bold, beautiful brand identities from scratch or
-                                            refine your existing brand to stand out in today’s crowded
-                                            marketplace.
-                                        </p>
-                                    </div>
+
                                 </div>
                             </div>
+
                         </div>
+
                     </div>
 
                     <!-- Side Image -->
-                    <div class="col-md-3 d-flex align-items-stretch">
-                        <div class="img w-100 left-img" style="min-height: auto !important"></div>
+                    <div class="col-md-3 d-flex">
+                        <div class=" left-web" style="min-height: auto !important"></div>
                     </div>
                 </div>
 
@@ -209,7 +253,7 @@
                     </div>
 
                     <div class="col-md-5 d-flex align-items-stretch">
-                        <div class="img w-100 left-img" style="min-height: auto !important"></div>
+                        <div class="img w-100 idea-web" style="min-height: auto !important"></div>
                     </div>
                 </div>
 
@@ -318,17 +362,38 @@
                         <!-- test -->
                         <div class="row mb-4 heading-section">
                             <div class="col-md-12 ftco-animate fadeInUp">
-                                <h2 class="mb-3 mt-4">Packages & Pricing</h2>
+                                <h5 class="mb-3 mt-4">Packages & Pricing</h5>
                             </div>
+
                             <div class="col-md-4" v-for="(pkg, index) in photographyPackages" :key="index">
-                                <div class="media block-6 services d-block ftco-animate fadeInUp card_service h-100">
-                                    <div class="media-body">
-                                        <h2 class="heading mb-2">{{ pkg.name }}</h2>
-                                        <p class="text-white mb-1">{{ pkg.price }}</p>
-                                        <p class="about-decription mb-0">{{ pkg.details }}</p>
+                                <div class="price-flip mb-4" :class="{ 'price-flip-highlight': index === 1 }">
+                                    <div class="price-flip-inner">
+
+                                        <!-- FRONT -->
+                                        <div class="price-flip-front animated-front">
+                                            <div class="most-popular-badge" v-if="index === 1">
+
+                                            </div>
+                                            <h6 class="mb-2">{{ pkg.name }}</h6>
+                                            <span class="price-tag">{{ pkg.price }}</span>
+                                            <p class="about-decription mb-2">{{ pkg.details }}</p>
+                                        </div>
+
+                                        <!-- BACK -->
+                                        <div class="price-flip-back">
+                                            <h6 class="text-white mb-3">What’s Included:</h6>
+                                            <ul>
+                                                <li v-for="(item, i) in pkg.items" :key="i">{{ item }}</li>
+                                            </ul>
+                                            <button class="btn btn-light" @click="scrollToContact">Contact Us</button>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
+
+
+
                         </div>
                     </div>
                 </div>
@@ -354,25 +419,7 @@
                     <!-- Left Column - 70% (Main Content) -->
                     <div class="col-md-8">
                         <!-- Carousel Preview -->
-                        <div class="carousel slide mb-3" id="carouselWebPreview" data-bs-ride="carousel">
-                            <div class="carousel-inner rounded">
-                                <div v-for="(item, index) in webPreviewImages" :key="index" class="carousel-item"
-                                    :class="{ active: index === activeWebPreviewIndex }">
-                                    <transition name="fade">
-                                        <img :src="webPreviewImages[activeWebPreviewIndex]"
-                                            class="d-block w-100 object-cover" style="height: 280px" />
-                                    </transition>
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselWebPreview"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon"></span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselWebPreview"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon"></span>
-                            </button>
-                        </div>
+
 
                         <!-- Gallery Thumbnails -->
                         <div class="d-flex gap-2 mb-2 flex-wrap">
@@ -391,25 +438,45 @@
                         <!-- Packages -->
                         <div class="row mb-4 heading-section">
                             <div class="col-md-12 ftco-animate fadeInUp">
-                                <h2 class="mb-3 mt-4">Packages & Pricing</h2>
+                                <h5 class="mb-3 mt-4">Packages & Pricing</h5>
                             </div>
+
                             <div class="col-md-4" v-for="(pkg, index) in webPackages" :key="index">
-                                <div class="media block-6 services d-block ftco-animate fadeInUp card_service h-100">
-                                    <div class="media-body">
-                                        <h2 class="heading mb-2">{{ pkg.name }}</h2>
-                                        <p class="text-white mb-1">{{ pkg.price }}</p>
-                                        <p class="about-decription mb-0">{{ pkg.details }}</p>
+                                <div class="price-flip mb-4" :class="{ 'price-flip-highlight': index === 1 }">
+                                    <div class="price-flip-inner">
+
+                                        <!-- FRONT -->
+                                        <div class="price-flip-front animated-front">
+                                            <div v-if="index === 1" class="most-popular-badge">
+                                                <i class="fas fa-star"></i> Most Popular
+                                            </div>
+
+                                            <h6 class="mb-2">{{ pkg.name }}</h6>
+                                            <span class="price-tag">{{ pkg.price }}</span>
+                                            <p class="about-decription mb-2">{{ pkg.details }}</p>
+                                        </div>
+
+                                        <!-- BACK -->
+                                        <div class="price-flip-back">
+                                            <h6 class="text-white mb-3">What’s Included:</h6>
+                                            <ul>
+                                                <li v-for="(item, i) in pkg.features" :key="i">
+                                                    <i class=" me-2 text-info"></i> {{ item }}
+                                                </li>
+                                            </ul>
+                                            <button class="btn btn-light mt-3" @click="scrollToContact">Contact
+                                                Us</button>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
+
+
+
                         </div>
 
-                        <!-- CTA -->
-                        <div class="text-end">
-                            <button class="btn btn-light px-4 py-2 rounded-pill" @click="scrollToSection(contactRef)">
-                                Contact Us
-                            </button>
-                        </div>
+
                     </div>
 
                     <!-- Right Column - 30% (Subservices) -->
@@ -579,13 +646,13 @@
         <!-- Contact -->
         <section class="ftco-section contact-section" id="contact" data-animate="fade-left">
             <div class="container">
-                <div class="row justify-content-center mb-5 pb-3">
-                    <div class="heading-section text-center ftco-animate fadeInUp ftco-animated">
-                        <h2 class="mb-4">Let’s Work Together</h2>
-                        <p class="about-decription">
+                <div class="row justify-content-center mb-4">
+                    <div class="heading-section text-left ftco-animate fadeInUp ftco-animated">
+                        <h2 class="mb-2">Let’s Work Together</h2>
+                        <p class="about-decription" style="margin-bottom: 0 !important; ">
                             Ready to bring your vision to life? Whether it’s a new website, creative campaign, or a
                             stunning visual identity — we’re just a message away.
-                            = </p>
+                        </p>
                     </div>
                 </div>
 
@@ -678,30 +745,7 @@
                     </div>
 
                     <div class="col-md-6 d-flex align-items-stretch">
-                        <div id="map" style="position: relative; overflow: hidden">
-                            <div style="
-                  height: 100%;
-                  width: 100%;
-                  position: absolute;
-                  top: 0px;
-                  left: 0px;
-                  background-color: rgb(229, 227, 223);
-                ">
-                                <div class="gm-err-container">
-                                    <div class="gm-err-content">
-                                        <div class="gm-err-icon">
-                                            <img src="https://maps.gstatic.com/mapfiles/api-3/images/icon_error.png"
-                                                alt="" draggable="false" style="user-select: none" />
-                                        </div>
-                                        <div class="gm-err-title">Sorry! Something went wrong.</div>
-                                        <div class="gm-err-message">
-                                            This page didn't load Google Maps correctly. See the
-                                            JavaScript console for technical details.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="contact-web " style="min-height: auto !important;"></div>
                     </div>
                 </div>
             </div>
@@ -720,6 +764,8 @@ const formData = ref({
     subject: '',
     message: ''
 });
+
+
 
 const handleSubmit = async () => {
     const response = await fetch('https://formsubmit.co/ajax/gsanjeekumar@gmail.com', {
@@ -872,10 +918,49 @@ const galleryThumbs = computed(() => selectedService.value.gallery || []);
 
 // Packages
 const photographyPackages = [
-    { name: "Basic Package", price: "RM 1,000", details: "1 Photographer, 50 Edited Photos, Softcopy Delivery" },
-    { name: "Premium Package", price: "RM 1,800", details: "2 Photographers, All Edited, Album + Frame" },
-    { name: "Event Gold", price: "RM 2,500", details: "Full Day, Cinematic Video, Drone, Premium Album" }
+    {
+        name: "Basic",
+        price: "RM 1,000",
+        details: "Best for short events and budget-friendly needs.",
+        items: [
+            "1 Photographer",
+            "Up to 2 Hours Coverage",
+            "50 Edited Photos",
+            "Softcopy via Google Drive",
+            "No Album",
+            "No Printed Frame"
+        ]
+    },
+    {
+        name: "Premium",
+        price: "RM 1,800",
+        details: "Perfect for full events with physical keepsakes.",
+        items: [
+            "1 Photographers",
+            "Up to 5 Hours Coverage",
+            "100 Edited Photos",
+            "Photo Album: 10' x 10' ",
+            "1 Wall Frame: 16' x 24'",
+            "Softcopy via Google Drive"
+        ]
+    },
+    {
+        name: "Gold",
+        price: "RM 3,999",
+        details: "All-in-one full day package with cinematic video.",
+        items: [
+            "2 Photographers",
+            "1 videographer",
+            "Full event coverage",
+            "All Edited Photos",
+            "Drone Coverage",
+            "Photo Album: 12' x 12' ",
+            "2 Wall Frames: 16' x 24",
+            "Softcopy via Google Drive"
+        ]
+    }
 ];
+
 
 const webServices = [
     { title: "Corporate Websites", description: "Multi-page websites for SMEs." },
@@ -887,10 +972,51 @@ const webServices = [
 ];
 
 const webPackages = [
-    { name: "Starter", price: "RM 850", details: "One-page static site, responsive." },
-    { name: "Business Pro", price: "RM 1,800", details: "Up to 6 pages, mobile-optimized." },
-    { name: "Full Suite", price: "RM 2,800", details: "Branding, build, domain, setup." }
-];
+  {
+    name: "Landing Page",
+    price: "RM 1,200",
+    details: "Single-page site perfect for events or promos.",
+    features: [
+      "Custom Design",
+      "Mobile Optimized",
+      "Fast Loading",
+      "Contact Form Integration",
+      "1 Month Maintenance Support",
+      "Google Analytics Setup",
+      "Basic SEO Setup"
+    ]
+  },
+  {
+    name: "Business Website",
+    price: "RM 2,400",
+    details: "A full business presence with up to 5 pages and CMS.",
+    features: [
+      "5 Fully Designed Pages",
+      "CMS (WordPress or VuePress)",
+      "Responsive Design for All Devices",
+      "SEO Ready Pages",
+      "Google Maps Integration",
+      "WhatsApp Click-to-Chat",
+      "Speed Optimization",
+      "2 Months Support"
+    ]
+  },
+  {
+    name: "E-Commerce",
+    price: "RM 3,800",
+    details: "Start selling online with a modern store and admin panel.",
+    features: [
+      "Product Management System",
+      "Secure Payment Gateway (FPX, Stripe)",
+      "Cart + Checkout + Order Summary",
+      "User Login + Order History",
+      "Admin Dashboard with Analytics",
+      "Email Notifications",
+      "Stock Control",
+      "Free 3 Months Support"
+    ]
+  }
+]
 
 const brandingServices = [
     { title: "Logo Design", description: "Custom logo aligned with identity." },
@@ -906,6 +1032,15 @@ const brandingPackages = [
     { name: "Identity Pro", price: "RM 1,200", details: "Logo, fonts, color palette, guide." },
     { name: "UI/UX Suite", price: "RM 2,500", details: "5–7 screens, Figma prototype." }
 ];
+// Scroll to Contact Form
+const scrollToContact = () => {
+    const el = document.getElementById("contact");
+    if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+    } else {
+        console.warn("No element with ID 'contact' found.");
+    }
+}
 </script>
 
 <style scoped>
@@ -1009,7 +1144,7 @@ const brandingPackages = [
 .hero-section {
     position: relative;
     height: 100vh;
-    background-image: url("/hero.jpg");
+    background-image: url("/hero5.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

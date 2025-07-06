@@ -40,7 +40,7 @@ body {
 .hero-section {
   position: relative;
   height: 100vh;
-  background: url('/hero.jpg') no-repeat center center/cover;
+  background: url('/public/hero5.png') no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -244,9 +244,57 @@ body {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  min-height: 500px;
+  min-height: 400px !important;
+  height: 400px !important;
   width: 100%;
   position: relative;
+}
+
+
+
+.left-web {
+  background-image: url('/public/images/robot-gesturing.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.about-web {
+  background-image: url('/public/images/about-nexora.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 400px !important;
+  height: 400px !important;
+  width: 100%;
+  position: relative;
+  border-radius: 12px;
+}
+
+.idea-web {
+  background-image: url('/public/images/robot_idea.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.contact-web {
+  background-image: url('/public/images/robot_contact.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .icon-video {
@@ -262,8 +310,8 @@ body {
 }
 
 .heading-section h2 {
-    font-size: 16px;
-    color: rgb(157, 161, 165);
+    font-size: 19px;
+    color: rgb(243, 244, 245);
     line-height: 1.4;
     font-weight: 700;
     text-transform: uppercase;
@@ -613,10 +661,10 @@ pre {
     word-break: normal; }
 
   .about-decription {
-    font-size: 14px;
+    font-size: 16px !important;
     line-height: 1.8;
     font-weight: 400 !important;
-    color: #9da1a5;
+    color: #e7e7e7;
 }
 
 .ftco-about .counter-wrap .text p span.number {
@@ -794,9 +842,16 @@ pre {
   top: 0;
   left: 0; }
 
-.progress-circle .border-primary {
-  border-color: #9d8f8f !important; }
+.progress-circle  {
+  border-color: #0096ff !important;
+}
 
+.progress {
+  box-shadow: 
+    0 0 8px rgba(0, 150, 255, 0.4), 
+    0 0 16px rgba(0, 150, 255, 0.2);
+  border-radius: 50%;
+}
 
 
   /* new */
@@ -1263,7 +1318,7 @@ background-color: #111;
     .hero-section {
   position: relative;
   height: 100vh;
-  background: url('/hero.jpg') no-repeat center center/cover;
+  background: url('/public/hero5.png') no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1869,10 +1924,10 @@ html {
 }
 
 .card_service {
-    padding: 10px;
-    border: 1px solid white;
+    /* padding: 10px; */
+    /* border: 1px solid white; */
     text-align: center;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     cursor: pointer;
     transition: all 0.3s ease;
     background: transparent;
@@ -2049,6 +2104,7 @@ html {
   left: 50%;
   transform: translateX(-50%);
   height: 100px;
+  z-index: 10;
   }
 
   .hero-content {
@@ -2072,4 +2128,355 @@ html {
 
 .hero-content {
   position: relative;
+}
+
+/* Flip card container */
+/* Flip card container */
+.flip-card {
+  width: 100%;
+  height: 300px;
+  perspective: 1000px;
+}
+
+/* Inner rotating container */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  will-change: transform;
+}
+
+/* Flip effect on hover */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* FRONT face */
+.flip-card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: linear-gradient(135deg, #000000, #000514); /* Ultra-dark gradient */
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 2;
+
+  /* Glow */
+  box-shadow:
+    0 0 10px rgba(0, 150, 255, 0.2),
+    0 0 20px rgba(0, 150, 255, 0.3),
+    0 0 30px rgba(0, 150, 255, 0.2);
+}
+
+/* Shimmer effect on front */
+.flip-card-front::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  transform: skewX(-25deg);
+  animation: shine 3s infinite;
+  z-index: 3;
+}
+
+/* BACK face */
+.flip-card-back {
+  background: linear-gradient(135deg, #000814, #001F3F); /* Dark blue gradient */
+  color: white;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem;
+  text-align: center;
+
+  /* Deep glow effect */
+  box-shadow:
+    0 0 10px rgba(0, 102, 204, 0.3),
+    0 0 20px rgba(0, 102, 204, 0.4),
+    0 0 30px rgba(0, 102, 204, 0.3);
+}
+
+/* Shine animation keyframes */
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  flex-direction: column; /* Important to stack icon/text vertically */
+  padding: 1.5rem;
+  box-sizing: border-box;  /* Prevent padding from overflowing */
+}
+
+.flip-card {
+  width: 100%;
+  height: 250px; /* You can adjust this value */
+  perspective: 1000px;
+}
+
+.btn-light {
+  background-color: #ffffff;
+  color: #000814;
+  border: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 6px;
+  box-shadow:
+    0 4px 12px rgba(255, 255, 255, 0.1),
+    0 6px 16px rgba(0, 0, 0, 0.2); /* Soft outer + contrast depth */
+  transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+  background-color: #f1f1f1;
+  color: #000814;
+  box-shadow:
+    0 6px 16px rgba(255, 255, 255, 0.15),
+    0 8px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+
+/* price_flip */
+/* Flip wrapper */
+.price-flip {
+  perspective: 1000px;
+  width: 100%;
+}
+
+/* Inner flipper */
+.price-flip-inner {
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  position: relative;
+}
+
+/* Flip trigger */
+.price-flip:hover .price-flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Shared face styles */
+.price-flip-front,
+.price-flip-back {
+  width: 100%;
+  min-height: 220px;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+/* === FRONT: Neon blue glow + shimmer === */
+.price-flip-front {
+  background: linear-gradient(135deg, #000000, #000514);
+  color: white;
+  box-shadow:
+    0 0 10px rgba(0, 150, 255, 0.3),
+    0 0 20px rgba(0, 150, 255, 0.4),
+    0 0 30px rgba(0, 150, 255, 0.5);
+  z-index: 2;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Shimmer effect */
+.price-flip-front::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.05)
+  );
+  transform: skewX(-25deg);
+  animation: shimmer 3s infinite;
+  z-index: 1;
+}
+
+/* === BACK: Darker Blue Gradient === */
+.price-flip-back {
+  background: linear-gradient(135deg, #000814, #001F3F); /* Dark blue gradient */
+  color: white;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 1.5rem; /* ⬅️ Add more top/bottom padding here */
+  text-align: center;
+
+  box-shadow:
+    0 0 10px rgba(0, 102, 204, 0.3),
+    0 0 20px rgba(0, 102, 204, 0.4),
+    0 0 30px rgba(0, 102, 204, 0.3);
+}
+
+
+/* Shine animation keyframes */
+@keyframes shimmer {
+  0% {
+    left: -75%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Button polish */
+.btn-light {
+  background: white;
+  color: #001F3F;
+  font-weight: 600;
+  border-radius: 6px;
+  box-shadow:
+    0 3px 10px rgba(255, 255, 255, 0.1),
+    0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+  background-color: #f1f1f1;
+  transform: translateY(-2px);
+}
+
+.price-flip-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Highlighted Card */
+.price-flip-highlight {
+  position: relative;
+  transform: scale(1.05);
+  z-index: 3;
+  animation: pulseGlow 3s ease-in-out infinite;
+  box-shadow:
+    0 0 10px rgba(0, 200, 255, 0.4),
+    0 0 20px rgba(0, 200, 255, 0.5),
+    0 0 30px rgba(0, 200, 255, 0.3);
+  border: 2px solid rgba(0, 200, 255, 0.5);
+}
+
+/* Ribbon (optional) */
+.price-flip-highlight::before {
+  content: "Most Popular";
+  position: absolute;
+  top: 10px;
+  right: -40px;
+  transform: rotate(45deg);
+  background: #00bfff;
+  color: #fff;
+  padding: 3px 24px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  z-index: 5;
+}
+
+/* Pulse animation */
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1.05);
+    box-shadow:
+      0 0 10px rgba(0, 200, 255, 0.4),
+      0 0 20px rgba(0, 200, 255, 0.5),
+      0 0 30px rgba(0, 200, 255, 0.3);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow:
+      0 0 20px rgba(0, 200, 255, 0.6),
+      0 0 30px rgba(0, 200, 255, 0.7),
+      0 0 40px rgba(0, 200, 255, 0.5);
+  }
+  100% {
+    transform: scale(1.05);
+    box-shadow:
+      0 0 10px rgba(0, 200, 255, 0.4),
+      0 0 20px rgba(0, 200, 255, 0.5),
+      0 0 30px rgba(0, 200, 255, 0.3);
+  }
+}
+
+.price-flip-back ul {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.price-flip-back ul li {
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.price-tag {
+  background: rgba(0, 153, 255, 0.15);
+  border: 1px solid #00bfff;
+  color: #00ccff;
+  padding: 6px 12px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
+  display: inline-block;
+  margin-bottom: 10px;
 }
