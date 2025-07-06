@@ -5,7 +5,7 @@
             <div class="overlay"></div>
 
             <div class="hero-content">
-            <img src="/images/NexoraLogo.png" alt="Nexora Logo" class="hero_logo" />
+                <img src="/images/NexoraLogo.png" alt="Nexora Logo" class="hero_logo" />
                 <!-- <h1 class="logo log_sections-box">
                     <a class="hero-logo-box" href="#">
                         <small> PIXEL SOLUTIONS</small>
@@ -20,6 +20,10 @@
 
                 <!-- <a href="#" class="hero-contact-btn">Contact us <span class="ion-ios-arrow-round-forward"></span></a> -->
             </div>
+
+            <button @click="handleScrollById('startNew')" class="hero-scroll-btn border-0 bg-transparent text-white">
+                <i class="fas fa-chevron-down fa-2x"></i>
+            </button>
         </section>
 
         <!-- About -->
@@ -30,7 +34,8 @@
                         <div class="left-img"></div>
                     </div>
                     <div class="col-md-6 col-lg-6 pl-md-5">
-                        <div class="heading-section ftco-animate fadeInUp ftco-animated">
+                        <div id="startNew" ref="startNewRef"
+                            class="heading-section ftco-animate fadeInUp ftco-animated">
                             <h2 class="mb-4">
                                 We Are Nexora Pixel Solutions — <br />A Visual & Digital
                                 Creative Agency
@@ -710,33 +715,33 @@ import { ref, computed, onMounted, nextTick } from "vue";
 // Contact Form
 const formSubmitted = ref(false);
 const formData = ref({
-  name: '',
-  email: '',
-  subject: '',
-  message: ''
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
 });
 
 const handleSubmit = async () => {
-  const response = await fetch('https://formsubmit.co/ajax/gsanjeekumar@gmail.com', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    body: JSON.stringify({
-      name: formData.value.name,
-      email: formData.value.email,
-      _subject: formData.value.subject,
-      message: formData.value.message
-    })
-  });
+    const response = await fetch('https://formsubmit.co/ajax/gsanjeekumar@gmail.com', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            name: formData.value.name,
+            email: formData.value.email,
+            _subject: formData.value.subject,
+            message: formData.value.message
+        })
+    });
 
-  if (response.ok) {
-    formSubmitted.value = true;
-    formData.value = { name: '', email: '', subject: '', message: '' };
-  } else {
-    alert('Oops! Something went wrong. Please try again.');
-  }
+    if (response.ok) {
+        formSubmitted.value = true;
+        formData.value = { name: '', email: '', subject: '', message: '' };
+    } else {
+        alert('Oops! Something went wrong. Please try again.');
+    }
 };
 
 // Tabs & Modal Gallery
@@ -747,30 +752,30 @@ const webPreviewImages = ref([]);
 const webGalleryThumbs = ref([]);
 
 const getCategoryName = (tab) => {
-  return {
-    tab1: "Nature",
-    tab2: "Portrait",
-    tab3: "Urban",
-    tab4: "Events"
-  }[tab];
+    return {
+        tab1: "Nature",
+        tab2: "Portrait",
+        tab3: "Urban",
+        tab4: "Events"
+    }[tab];
 };
 
 const getImageUrl = (tab, index) => {
-  const label = getCategoryName(tab);
-  return `https://via.placeholder.com/800x600?text=${label}+${index}`;
+    const label = getCategoryName(tab);
+    return `https://via.placeholder.com/800x600?text=${label}+${index}`;
 };
 
 const openModal = (img) => {
-  modalImage.value = img;
+    modalImage.value = img;
 };
 
 const selectPreview = (index) => {
-  activePreviewIndex.value = index;
-  const carouselEl = document.getElementById("carouselPreview");
-  if (carouselEl) {
-    const carousel = bootstrap.Carousel.getInstance(carouselEl);
-    if (carousel) carousel.to(index);
-  }
+    activePreviewIndex.value = index;
+    const carouselEl = document.getElementById("carouselPreview");
+    if (carouselEl) {
+        const carousel = bootstrap.Carousel.getInstance(carouselEl);
+        if (carousel) carousel.to(index);
+    }
 };
 
 // Scroll Refs
@@ -778,86 +783,87 @@ const photographyRef = ref(null);
 const webRef = ref(null);
 const brandingRef = ref(null);
 const contactRef = ref(null);
+const startNewRef = ref(null);
 
 const handleScrollById = (id) => {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: "smooth" });
-  else console.warn("No element with ID:", id);
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+    else console.warn("No element with ID:", id);
 };
 
 // Animate on scroll
 onMounted(() => {
-  const elements = document.querySelectorAll("[data-animate]");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("animate");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  elements.forEach((el) => observer.observe(el));
+    const elements = document.querySelectorAll("[data-animate]");
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+    elements.forEach((el) => observer.observe(el));
 });
 
 // Progress Circle Animation
 const progressData = [
-  { label: "Creative", value: 90 },
-  { label: "Technical", value: 80 },
-  { label: "Execution", value: 75 }
+    { label: "Creative", value: 90 },
+    { label: "Technical", value: 80 },
+    { label: "Execution", value: 75 }
 ];
 const animatedValue = ref(progressData.map(() => 0));
 const progressSection = ref(null);
 
 const animateProgress = (index, target) => {
-  const duration = 1000;
-  const startTime = performance.now();
-  const step = (now) => {
-    const elapsed = now - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    animatedValue.value[index] = target * progress;
-    if (progress < 1) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
+    const duration = 1000;
+    const startTime = performance.now();
+    const step = (now) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        animatedValue.value[index] = target * progress;
+        if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
 };
 
 const handleIntersection = (entries, observer) => {
-  if (entries[0].isIntersecting) {
-    progressData.forEach((item, index) => {
-      animateProgress(index, item.value);
-    });
-    observer.disconnect();
-  }
+    if (entries[0].isIntersecting) {
+        progressData.forEach((item, index) => {
+            animateProgress(index, item.value);
+        });
+        observer.disconnect();
+    }
 };
 
 onMounted(async () => {
-  await nextTick();
-  const observer = new IntersectionObserver(handleIntersection, { threshold: 0.3 });
-  if (progressSection.value) observer.observe(progressSection.value);
+    await nextTick();
+    const observer = new IntersectionObserver(handleIntersection, { threshold: 0.3 });
+    if (progressSection.value) observer.observe(progressSection.value);
 });
 
 // Portfolio Items
 const portfolioItems = [
-  { title: "Designer Portfolio", description: "Built with Vue 3 + Tailwind CSS for a freelance designer." },
-  { title: "Tuition Centre Website", description: "Corporate site with course info & registration form." },
-  { title: "Landing Page – Event Planner", description: "Facebook Ads landing page with WhatsApp CTA." },
-  { title: "Mini Store for Home Baker", description: "Shopify setup with 30+ products and custom branding." }
+    { title: "Designer Portfolio", description: "Built with Vue 3 + Tailwind CSS for a freelance designer." },
+    { title: "Tuition Centre Website", description: "Corporate site with course info & registration form." },
+    { title: "Landing Page – Event Planner", description: "Facebook Ads landing page with WhatsApp CTA." },
+    { title: "Mini Store for Home Baker", description: "Shopify setup with 30+ products and custom branding." }
 ];
 
 // Photography Services
 const photographyServices = [
-  { title: "Wedding Photography", description: "Candid and traditional moments.", image: "./wedding-thumb.jpg", preview: "/images/services/wedding-preview.jpg", details: "We capture full-day weddings...", gallery: ["wedding.jpg", "engagement.jpg"] },
-  { title: "Engagement", description: "Pre-wedding and engagement photography.", image: "/engagement.jpg", preview: "/images/services/engagement-preview.jpg", details: "We plan pre-wedding sessions...", gallery: ["engagement.jpg"] },
-  { title: "Birthday", description: "Joyful coverage of birthdays.", image: "/birthday.jpg", preview: "/images/services/birthday-preview.jpg", details: "From cake cutting to candids...", gallery: ["birthday.jpg"] },
-  { title: "Corporate", description: "Event coverage, team portraits.", image: "/images/services/corporate.jpg", preview: "/images/services/corporate-preview.jpg", details: "Professional shots for conferences...", gallery: ["corporate1.jpg"] },
-  { title: "Studio Portraits", description: "Indoor portrait sessions.", image: "/images/services/studio.jpg", preview: "/images/services/studio-preview.jpg", details: "Studio sessions with lighting...", gallery: ["studio1.jpg"] },
-  { title: "Product", description: "E-commerce ready product shots.", image: "/images/services/product.jpg", preview: "/images/services/product-preview.jpg", details: "Clean background product photos...", gallery: ["product1.jpg"] },
-  { title: "Kids & Family", description: "Fashion and lifestyle photography.", image: "/images/services/product.jpg", preview: "/images/services/model-preview.jpg", details: "Stylized photo shoots for influencers...", gallery: ["model1.jpg"] }
+    { title: "Wedding Photography", description: "Candid and traditional moments.", image: "./wedding-thumb.jpg", preview: "/images/services/wedding-preview.jpg", details: "We capture full-day weddings...", gallery: ["wedding.jpg", "engagement.jpg"] },
+    { title: "Engagement", description: "Pre-wedding and engagement photography.", image: "/engagement.jpg", preview: "/images/services/engagement-preview.jpg", details: "We plan pre-wedding sessions...", gallery: ["engagement.jpg"] },
+    { title: "Birthday", description: "Joyful coverage of birthdays.", image: "/birthday.jpg", preview: "/images/services/birthday-preview.jpg", details: "From cake cutting to candids...", gallery: ["birthday.jpg"] },
+    { title: "Corporate", description: "Event coverage, team portraits.", image: "/images/services/corporate.jpg", preview: "/images/services/corporate-preview.jpg", details: "Professional shots for conferences...", gallery: ["corporate1.jpg"] },
+    { title: "Studio Portraits", description: "Indoor portrait sessions.", image: "/images/services/studio.jpg", preview: "/images/services/studio-preview.jpg", details: "Studio sessions with lighting...", gallery: ["studio1.jpg"] },
+    { title: "Product", description: "E-commerce ready product shots.", image: "/images/services/product.jpg", preview: "/images/services/product-preview.jpg", details: "Clean background product photos...", gallery: ["product1.jpg"] },
+    { title: "Kids & Family", description: "Fashion and lifestyle photography.", image: "/images/services/product.jpg", preview: "/images/services/model-preview.jpg", details: "Stylized photo shoots for influencers...", gallery: ["model1.jpg"] }
 ];
 
 const activeServiceIndex = ref(0);
 const selectService = (item) => {
-  const index = photographyServices.findIndex((service) => service.title === item.title);
-  if (index !== -1) activeServiceIndex.value = index;
+    const index = photographyServices.findIndex((service) => service.title === item.title);
+    if (index !== -1) activeServiceIndex.value = index;
 };
 
 const selectedService = computed(() => photographyServices[activeServiceIndex.value]);
@@ -866,39 +872,39 @@ const galleryThumbs = computed(() => selectedService.value.gallery || []);
 
 // Packages
 const photographyPackages = [
-  { name: "Basic Package", price: "RM 1,000", details: "1 Photographer, 50 Edited Photos, Softcopy Delivery" },
-  { name: "Premium Package", price: "RM 1,800", details: "2 Photographers, All Edited, Album + Frame" },
-  { name: "Event Gold", price: "RM 2,500", details: "Full Day, Cinematic Video, Drone, Premium Album" }
+    { name: "Basic Package", price: "RM 1,000", details: "1 Photographer, 50 Edited Photos, Softcopy Delivery" },
+    { name: "Premium Package", price: "RM 1,800", details: "2 Photographers, All Edited, Album + Frame" },
+    { name: "Event Gold", price: "RM 2,500", details: "Full Day, Cinematic Video, Drone, Premium Album" }
 ];
 
 const webServices = [
-  { title: "Corporate Websites", description: "Multi-page websites for SMEs." },
-  { title: "One-Page Static Sites", description: "Simple and fast-loading pages." },
-  { title: "Basic eCommerce Setup", description: "Start your online store (Shopify)." },
-  { title: "Portfolios", description: "Sites for freelancers and creatives." },
-  { title: "Landing Pages", description: "Campaigns, ads, or product pages." },
-  { title: "Hosting & SEO", description: "Help with domains, SEO, Google indexing." }
+    { title: "Corporate Websites", description: "Multi-page websites for SMEs." },
+    { title: "One-Page Static Sites", description: "Simple and fast-loading pages." },
+    { title: "Basic eCommerce Setup", description: "Start your online store (Shopify)." },
+    { title: "Portfolios", description: "Sites for freelancers and creatives." },
+    { title: "Landing Pages", description: "Campaigns, ads, or product pages." },
+    { title: "Hosting & SEO", description: "Help with domains, SEO, Google indexing." }
 ];
 
 const webPackages = [
-  { name: "Starter", price: "RM 850", details: "One-page static site, responsive." },
-  { name: "Business Pro", price: "RM 1,800", details: "Up to 6 pages, mobile-optimized." },
-  { name: "Full Suite", price: "RM 2,800", details: "Branding, build, domain, setup." }
+    { name: "Starter", price: "RM 850", details: "One-page static site, responsive." },
+    { name: "Business Pro", price: "RM 1,800", details: "Up to 6 pages, mobile-optimized." },
+    { name: "Full Suite", price: "RM 2,800", details: "Branding, build, domain, setup." }
 ];
 
 const brandingServices = [
-  { title: "Logo Design", description: "Custom logo aligned with identity." },
-  { title: "Brand Guidelines", description: "Fonts, colors, and brand rules." },
-  { title: "Website UI/UX", description: "Modern UI design in Figma/XD." },
-  { title: "App UI/UX", description: "Mobile UI and flow design." },
-  { title: "Social Media Kit", description: "Templates for posts & ads." },
-  { title: "Rebranding Services", description: "Refresh existing branding." }
+    { title: "Logo Design", description: "Custom logo aligned with identity." },
+    { title: "Brand Guidelines", description: "Fonts, colors, and brand rules." },
+    { title: "Website UI/UX", description: "Modern UI design in Figma/XD." },
+    { title: "App UI/UX", description: "Mobile UI and flow design." },
+    { title: "Social Media Kit", description: "Templates for posts & ads." },
+    { title: "Rebranding Services", description: "Refresh existing branding." }
 ];
 
 const brandingPackages = [
-  { name: "Logo Starter", price: "RM 400", details: "2 concepts, 2 revisions, PNG + vector." },
-  { name: "Identity Pro", price: "RM 1,200", details: "Logo, fonts, color palette, guide." },
-  { name: "UI/UX Suite", price: "RM 2,500", details: "5–7 screens, Figma prototype." }
+    { name: "Logo Starter", price: "RM 400", details: "2 concepts, 2 revisions, PNG + vector." },
+    { name: "Identity Pro", price: "RM 1,200", details: "Logo, fonts, color palette, guide." },
+    { name: "UI/UX Suite", price: "RM 2,500", details: "5–7 screens, Figma prototype." }
 ];
 </script>
 
