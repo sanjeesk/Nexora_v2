@@ -5,12 +5,12 @@
             <div class="overlay"></div>
 
             <div class="hero-content">
-                <h1 class="logo log_sections-box">
+            <img src="/images/NexoraLogo.png" alt="Nexora Logo" class="hero_logo" />
+                <!-- <h1 class="logo log_sections-box">
                     <a class="hero-logo-box" href="#">
-                        <span class="here_secrions-logo"> NEXORA </span>
                         <small> PIXEL SOLUTIONS</small>
                     </a>
-                </h1>
+                </h1> -->
 
                 <h1 class="slider-hero">
                     We Make <br />
@@ -160,50 +160,64 @@
                 </div>
 
                 <!-- Progress Circles (unchanged, optional to keep) -->
-                <div class="row progress-circle pt-md-5">
+                <div class="row progress-circle pt-md-5" ref="progressSection">
                     <div class="col-md-7 order-md-last py-md-5">
-                         <div
-    ref="progressSection"
-    class="row text-center justify-content-center"
-  >
-    <div class="col-md-3" v-for="(item, index) in progressData" :key="index">
-      <div class="progress-circle">
-        <svg viewBox="0 0 36 36">
-          <path
-            class="circle-bg"
-            d="M18 2.0845
-               a 15.9155 15.9155 0 0 1 0 31.831
-               a 15.9155 15.9155 0 0 1 0 -31.831"
-          />
-          <path
-            class="circle"
-            :style="{ strokeDasharray: `${animatedValue[index]}, 100` }"
-            d="M18 2.0845
-               a 15.9155 15.9155 0 0 1 0 31.831
-               a 15.9155 15.9155 0 0 1 0 -31.831"
-          />
-          <text x="18" y="20.35" class="percentage">{{ Math.round(animatedValue[index]) }}%</text>
-        </svg>
-        <h6 class="mt-2">{{ item.label }}</h6>
-      </div>
-    </div>
-  </div>
+                        <div class="row">
+                            <div v-for="(item, index) in progressData" :key="item.label"
+                                class="col-md-4 mb-md-0 mb-4 ftco-animate fadeInUp">
+                                <h2 class="text-center mb-4">{{ item.label }}</h2>
+                                <div class="progress mx-auto" :data-value="item.value">
+                                    <!-- Left Bar -->
+                                    <span class="progress-left">
+                                        <span class="progress-bar border-primary" :style="{
+                                            transform: `rotate(${animatedValue[index] > 50 ? (animatedValue[index] - 50) * 3.6 : 0}deg)`
+                                        }"></span>
+                                    </span>
+
+                                    <!-- Right Bar -->
+                                    <span class="progress-right">
+                                        <span class="progress-bar border-primary" :style="{
+                                            transform: `rotate(${animatedValue[index] <= 50 ? animatedValue[index] * 3.6 : 180}deg)`
+                                        }"></span>
+                                    </span>
+
+                                    <!-- Value Display -->
+                                    <div
+                                        class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                        <div class="h5">
+                                            {{ Math.floor(animatedValue[index]) }}<sup class="small">%</sup>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-md-4 mt-4">
+                                <div class=" ftco-animate fadeInUp">
+                                    <p class="about-decription">
+                                        We don’t just offer services — we build long-term value for
+                                        your business through powerful storytelling, strategic
+                                        design, and visual identity.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="col-md-5 d-flex align-items-stretch">
                         <div class="img w-100 left-img" style="min-height: auto !important"></div>
                     </div>
                 </div>
+
             </div>
         </section>
 
         <!-- photographyDetails -->
-        <section class="ftco-section ftco-about text-light"
-            data-animate="zoom-in">
+        <section class="ftco-section ftco-about text-light" data-animate="zoom-in">
             <div class="container">
                 <!-- Title & Intro -->
                 <div class="row">
-                    <div ref="photographyRef" id="photographyDetails" class="col-md-12 heading-section ftco-animate pb-4 fadeInUp">
+                    <div ref="photographyRef" id="photographyDetails"
+                        class="col-md-12 heading-section ftco-animate pb-4 fadeInUp">
                         <h2 class="mb-2">Photography Services</h2>
                         <p class="about-decription mb-0">
                             We capture timeless memories — from Indian weddings and
@@ -321,7 +335,7 @@
             <div class="container">
                 <!-- Title & Intro -->
                 <div class="row">
-                    <div id="webDetails" ref="webRef"  class="col-md-12 heading-section ftco-animate pb-4 fadeInUp">
+                    <div id="webDetails" ref="webRef" class="col-md-12 heading-section ftco-animate pb-4 fadeInUp">
                         <h2 class="mb-2">Web Design & Development</h2>
                         <p class="about-decription mb-0">
                             We build performance-driven websites — from portfolios and
@@ -434,12 +448,12 @@
         </section>
 
         <!-- brandingDetails -->
-        <section  class="ftco-section ftco-about text-light"
-            data-animate="zoom-in">
+        <section class="ftco-section ftco-about text-light" data-animate="zoom-in">
             <div class="container">
                 <!-- Title & Intro -->
                 <div class="row">
-                    <div ref="brandingRef" id="brandingDetails" class="col-md-12 heading-section ftco-animate pb-4 fadeInUp">
+                    <div ref="brandingRef" id="brandingDetails"
+                        class="col-md-12 heading-section ftco-animate pb-4 fadeInUp">
                         <h2 class="mb-2">Branding & UI/UX</h2>
                         <p class="about-decription mb-0">
                             We craft visual identities and digital experiences — from logos
@@ -561,11 +575,12 @@
         <section class="ftco-section contact-section" id="contact" data-animate="fade-left">
             <div class="container">
                 <div class="row justify-content-center mb-5 pb-3">
-                    <div class="col-md-4 heading-section text-center ftco-animate fadeInUp ftco-animated">
+                    <div class="heading-section text-center ftco-animate fadeInUp ftco-animated">
                         <h2 class="mb-4">Let’s Work Together</h2>
                         <p class="about-decription">
-      Ready to bring your vision to life? Whether it’s a new website, creative campaign, or a stunning visual identity — we’re just a message away.
-=                        </p>
+                            Ready to bring your vision to life? Whether it’s a new website, creative campaign, or a
+                            stunning visual identity — we’re just a message away.
+                            = </p>
                     </div>
                 </div>
 
@@ -604,7 +619,8 @@
                             <div>
                                 <h3 class="">Email Address</h3>
                                 <p style="margin-bottom: 0 !important">
-                                    <a class="about-decription" href="mailto:info@yoursite.com"> hello@nexorapixels.com</a>
+                                    <a class="about-decription" href="mailto:info@yoursite.com">
+                                        hello@nexorapixels.com</a>
                                 </p>
                             </div>
                         </div>
@@ -626,33 +642,34 @@
 
                 <div class="row block-9">
                     <div class="col-md-6 ftco-animate fadeInUp ftco-animated">
-                       <form
-  @submit.prevent="handleSubmit"
-  class="contact-form p-4 p-md-5 py-md-5"
-  v-if="!formSubmitted"
->
-  <div class="form-group">
-    <input v-model="formData.name" type="text" name="name" class="form-control" placeholder="Your Name" required />
-  </div>
-  <div class="form-group">
-    <input v-model="formData.email" type="email" name="email" class="form-control" placeholder="Your Email" required />
-  </div>
-  <div class="form-group">
-    <input v-model="formData.subject" type="text" name="_subject" class="form-control" placeholder="Subject" required />
-  </div>
-  <div class="form-group">
-    <textarea v-model="formData.message" name="message" cols="30" rows="7" class="form-control" placeholder="Message" required></textarea>
-  </div>
-  <div class="form-group">
-    <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5" />
-  </div>
-</form>
+                        <form @submit.prevent="handleSubmit" class="contact-form p-4 p-md-5 py-md-5"
+                            v-if="!formSubmitted">
+                            <div class="form-group">
+                                <input v-model="formData.name" type="text" name="name" class="form-control"
+                                    placeholder="Your Name" required />
+                            </div>
+                            <div class="form-group">
+                                <input v-model="formData.email" type="email" name="email" class="form-control"
+                                    placeholder="Your Email" required />
+                            </div>
+                            <div class="form-group">
+                                <input v-model="formData.subject" type="text" name="_subject" class="form-control"
+                                    placeholder="Subject" required />
+                            </div>
+                            <div class="form-group">
+                                <textarea v-model="formData.message" name="message" cols="30" rows="7"
+                                    class="form-control" placeholder="Message" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5" />
+                            </div>
+                        </form>
 
-<!-- Thank You Message -->
-<div v-else class="text-center p-5 bg-dark rounded text-light">
-  <h3 class="mb-3">Thank You!</h3>
-  <p>Your message has been sent successfully. We'll be in touch soon.</p>
-</div>
+                        <!-- Thank You Message -->
+                        <div v-else class="text-center p-5 bg-dark rounded text-light">
+                            <h3 class="mb-3">Thank You!</h3>
+                            <p>Your message has been sent successfully. We'll be in touch soon.</p>
+                        </div>
                     </div>
 
                     <div class="col-md-6 d-flex align-items-stretch">
@@ -688,57 +705,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from "vue";
-import { nextTick } from "vue";
+import { ref, computed, onMounted, nextTick } from "vue";
 
-const webPreviewImages = ref([]);
-const activeWebPreviewIndex = ref(0);
-const webGalleryThumbs = ref([]);
-
-const activeTab = ref("tab1");
-const modalImage = ref(null);
-
-const getImageUrl = (tab, index) => {
-    const label = getCategoryName(tab);
-    return `https://via.placeholder.com/800x600?text=${label}+${index}`;
-};
-
-const progressData = [
-  { value: 90, label: 'Photography' },
-  { value: 75, label: 'Web Design' },
-  { value: 85, label: 'Branding' },
-];
-
-const animatedValue = ref(progressData.map(() => 0));
-const progressSection = ref(null);
-
-const animateProgress = (index, target) => {
-  const duration = 1000;
-  const start = performance.now();
-  const step = () => {
-    const now = performance.now();
-    const progress = Math.min((now - start) / duration, 1);
-    animatedValue.value[index] = target * progress;
-    if (progress < 1) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
-};
-
-const handleIntersection = (entries) => {
-  if (entries[0].isIntersecting) {
-    progressData.forEach((item, index) => animateProgress(index, item.value));
-  }
-};
-
-onMounted(() => {
-  if (progressSection.value) {
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.5
-    });
-    observer.observe(progressSection.value);
-  }
-});
-
+// Contact Form
 const formSubmitted = ref(false);
 const formData = ref({
   name: '',
@@ -752,7 +721,7 @@ const handleSubmit = async () => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Accept: 'application/json'
+      'Accept': 'application/json'
     },
     body: JSON.stringify({
       name: formData.value.name,
@@ -770,38 +739,41 @@ const handleSubmit = async () => {
   }
 };
 
+// Tabs & Modal Gallery
+const activeTab = ref("tab1");
+const modalImage = ref(null);
+const activePreviewIndex = ref(0);
+const webPreviewImages = ref([]);
+const webGalleryThumbs = ref([]);
+
 const getCategoryName = (tab) => {
   return {
     tab1: "Nature",
     tab2: "Portrait",
     tab3: "Urban",
-    tab4: "Events",
+    tab4: "Events"
   }[tab];
 };
 
-const portfolioItems = [
-  {
-    title: "Designer Portfolio",
-    description: "Built with Vue 3 + Tailwind CSS for a freelance designer."
-  },
-  {
-    title: "Tuition Centre Website",
-    description: "Corporate site with course info & registration form."
-  },
-  {
-    title: "Landing Page – Event Planner",
-    description: "Facebook Ads landing page with WhatsApp CTA."
-  },
-  {
-    title: "Mini Store for Home Baker",
-    description: "Shopify setup with 30+ products and custom branding."
-  }
-];
+const getImageUrl = (tab, index) => {
+  const label = getCategoryName(tab);
+  return `https://via.placeholder.com/800x600?text=${label}+${index}`;
+};
 
 const openModal = (img) => {
   modalImage.value = img;
 };
 
+const selectPreview = (index) => {
+  activePreviewIndex.value = index;
+  const carouselEl = document.getElementById("carouselPreview");
+  if (carouselEl) {
+    const carousel = bootstrap.Carousel.getInstance(carouselEl);
+    if (carousel) carousel.to(index);
+  }
+};
+
+// Scroll Refs
 const photographyRef = ref(null);
 const webRef = ref(null);
 const brandingRef = ref(null);
@@ -813,106 +785,86 @@ const handleScrollById = (id) => {
   else console.warn("No element with ID:", id);
 };
 
-const activePreviewIndex = ref(0);
-
-const selectPreview = (index) => {
-  activePreviewIndex.value = index;
-  const carouselEl = document.getElementById("carouselPreview");
-  if (carouselEl) {
-    const carousel = bootstrap.Carousel.getInstance(carouselEl);
-    if (carousel) carousel.to(index);
-  }
-};
-
+// Animate on scroll
 onMounted(() => {
   const elements = document.querySelectorAll("[data-animate]");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
   elements.forEach((el) => observer.observe(el));
 });
 
-const photographyServices = [
-  {
-    title: "Wedding Photography",
-    description: "Candid and traditional moments.",
-    image: "./wedding-thumb.jpg",
-    preview: "/images/services/wedding-preview.jpg",
-    details: "We capture full-day weddings, including rituals, candids, and group portraits. Includes drone shots and cinematic angles.",
-    gallery: ["wedding.jpg", "engagement.jpg", "birthday.jpg", "wedding.jpg", "wedding.jpg"]
-  },
-  {
-    title: "Engagement",
-    description: "Pre-wedding and engagement photography to tell your love story.",
-    image: "/engagement.jpg",
-    preview: "/images/services/engagement-preview.jpg",
-    details: "We plan pre-wedding sessions with beautiful natural or urban settings. Includes styling consultation and location scouting.",
-    gallery: ["engagement.jpg", "engagement2.jpg", "engagement3.jpg"]
-  },
-  {
-    title: "Birthday",
-    description: "Joyful coverage of birthdays — from kids to adults.",
-    image: "/birthday.jpg",
-    preview: "/images/services/birthday-preview.jpg",
-    details: "From cake cutting to candids, we capture every happy moment of your birthday party with creativity and flair.",
-    gallery: ["birthday.jpg", "birthday2.jpg", "birthday3.jpg"]
-  },
-  {
-    title: "Corporate",
-    description: "Event coverage, team portraits, product & branding visuals.",
-    image: "/images/services/corporate.jpg",
-    preview: "/images/services/corporate-preview.jpg",
-    details: "Professional shots for conferences, brand launches, team profiles, and internal functions. Includes indoor and on-site setups.",
-    gallery: ["corporate1.jpg", "corporate2.jpg"]
-  },
-  {
-    title: "Studio Portraits",
-    description: "Indoor portrait sessions with controlled lighting and styling.",
-    image: "/images/services/studio.jpg",
-    preview: "/images/services/studio-preview.jpg",
-    details: "Studio sessions with professional lighting for personal portraits, graduation, LinkedIn, or creative headshots.",
-    gallery: ["studio1.jpg", "studio2.jpg"]
-  },
-  {
-    title: "Product",
-    description: "High-quality e-commerce ready product shots.",
-    image: "/images/services/product.jpg",
-    preview: "/images/services/product-preview.jpg",
-    details: "We provide clean background product photos ideal for marketplaces, websites, and catalogs.",
-    gallery: ["product1.jpg", "product2.jpg"]
-  },
-  {
-    title: "Kids & Family",
-    description: "Fashion and lifestyle photography for portfolios and brands.",
-    image: "/images/services/product.jpg",
-    preview: "/images/services/model-preview.jpg",
-    details: "Stylized photo shoots tailored for models, influencers, or brands. Includes location shoots and pose direction.",
-    gallery: ["model1.jpg", "model2.jpg"]
+// Progress Circle Animation
+const progressData = [
+  { label: "Creative", value: 90 },
+  { label: "Technical", value: 80 },
+  { label: "Execution", value: 75 }
+];
+const animatedValue = ref(progressData.map(() => 0));
+const progressSection = ref(null);
+
+const animateProgress = (index, target) => {
+  const duration = 1000;
+  const startTime = performance.now();
+  const step = (now) => {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    animatedValue.value[index] = target * progress;
+    if (progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+};
+
+const handleIntersection = (entries, observer) => {
+  if (entries[0].isIntersecting) {
+    progressData.forEach((item, index) => {
+      animateProgress(index, item.value);
+    });
+    observer.disconnect();
   }
+};
+
+onMounted(async () => {
+  await nextTick();
+  const observer = new IntersectionObserver(handleIntersection, { threshold: 0.3 });
+  if (progressSection.value) observer.observe(progressSection.value);
+});
+
+// Portfolio Items
+const portfolioItems = [
+  { title: "Designer Portfolio", description: "Built with Vue 3 + Tailwind CSS for a freelance designer." },
+  { title: "Tuition Centre Website", description: "Corporate site with course info & registration form." },
+  { title: "Landing Page – Event Planner", description: "Facebook Ads landing page with WhatsApp CTA." },
+  { title: "Mini Store for Home Baker", description: "Shopify setup with 30+ products and custom branding." }
+];
+
+// Photography Services
+const photographyServices = [
+  { title: "Wedding Photography", description: "Candid and traditional moments.", image: "./wedding-thumb.jpg", preview: "/images/services/wedding-preview.jpg", details: "We capture full-day weddings...", gallery: ["wedding.jpg", "engagement.jpg"] },
+  { title: "Engagement", description: "Pre-wedding and engagement photography.", image: "/engagement.jpg", preview: "/images/services/engagement-preview.jpg", details: "We plan pre-wedding sessions...", gallery: ["engagement.jpg"] },
+  { title: "Birthday", description: "Joyful coverage of birthdays.", image: "/birthday.jpg", preview: "/images/services/birthday-preview.jpg", details: "From cake cutting to candids...", gallery: ["birthday.jpg"] },
+  { title: "Corporate", description: "Event coverage, team portraits.", image: "/images/services/corporate.jpg", preview: "/images/services/corporate-preview.jpg", details: "Professional shots for conferences...", gallery: ["corporate1.jpg"] },
+  { title: "Studio Portraits", description: "Indoor portrait sessions.", image: "/images/services/studio.jpg", preview: "/images/services/studio-preview.jpg", details: "Studio sessions with lighting...", gallery: ["studio1.jpg"] },
+  { title: "Product", description: "E-commerce ready product shots.", image: "/images/services/product.jpg", preview: "/images/services/product-preview.jpg", details: "Clean background product photos...", gallery: ["product1.jpg"] },
+  { title: "Kids & Family", description: "Fashion and lifestyle photography.", image: "/images/services/product.jpg", preview: "/images/services/model-preview.jpg", details: "Stylized photo shoots for influencers...", gallery: ["model1.jpg"] }
 ];
 
 const activeServiceIndex = ref(0);
 const selectService = (item) => {
-  const index = photographyServices.findIndex(
-    (service) => service.title === item.title
-  );
+  const index = photographyServices.findIndex((service) => service.title === item.title);
   if (index !== -1) activeServiceIndex.value = index;
 };
 
-const selectedService = computed(
-  () => photographyServices[activeServiceIndex.value]
-);
+const selectedService = computed(() => photographyServices[activeServiceIndex.value]);
 const previewImages = computed(() => selectedService.value.gallery || []);
 const galleryThumbs = computed(() => selectedService.value.gallery || []);
 
+// Packages
 const photographyPackages = [
   { name: "Basic Package", price: "RM 1,000", details: "1 Photographer, 50 Edited Photos, Softcopy Delivery" },
   { name: "Premium Package", price: "RM 1,800", details: "2 Photographers, All Edited, Album + Frame" },
@@ -920,41 +872,37 @@ const photographyPackages = [
 ];
 
 const webServices = [
-  { title: "Corporate Websites", description: "Multi-page websites for SMEs and professional services." },
-  { title: "One-Page Static Sites", description: "Simple and fast-loading landing pages or personal websites." },
-  { title: "Basic eCommerce Setup", description: "Start your online store with up to 50 products (Shopify/static)." },
-  { title: "Portfolios", description: "Sites for freelancers, designers, or creative professionals." },
-  { title: "Landing Pages", description: "Pages for campaigns, ads, or product launches." },
-  { title: "Hosting & SEO", description: "Help with domains, hosting, Google indexing, and metadata setup." }
+  { title: "Corporate Websites", description: "Multi-page websites for SMEs." },
+  { title: "One-Page Static Sites", description: "Simple and fast-loading pages." },
+  { title: "Basic eCommerce Setup", description: "Start your online store (Shopify)." },
+  { title: "Portfolios", description: "Sites for freelancers and creatives." },
+  { title: "Landing Pages", description: "Campaigns, ads, or product pages." },
+  { title: "Hosting & SEO", description: "Help with domains, SEO, Google indexing." }
 ];
 
 const webPackages = [
-  { name: "Starter", price: "RM 850", details: "One-page static site, responsive and fast-loading." },
-  { name: "Business Pro", price: "RM 1,800", details: "Up to 6 pages, contact forms, mobile-optimized." },
-  { name: "Full Suite", price: "RM 2,800", details: "Includes branding, web build, domain, and setup." }
+  { name: "Starter", price: "RM 850", details: "One-page static site, responsive." },
+  { name: "Business Pro", price: "RM 1,800", details: "Up to 6 pages, mobile-optimized." },
+  { name: "Full Suite", price: "RM 2,800", details: "Branding, build, domain, setup." }
 ];
 
 const brandingServices = [
-  { title: "Logo Design", description: "Custom logo creation aligned with your business identity." },
-  { title: "Brand Guidelines", description: "Typography, colors, and design rules in a clear PDF guide." },
-  { title: "Website UI/UX", description: "Modern web UI design using Figma or Adobe XD." },
-  { title: "App UI/UX", description: "Designing mobile interfaces and user flows for Android/iOS." },
-  { title: "Social Media Kit", description: "Branded templates for posts, stories, highlights, and ads." },
-  { title: "Rebranding Services", description: "Refresh or modernize your company’s old branding." }
+  { title: "Logo Design", description: "Custom logo aligned with identity." },
+  { title: "Brand Guidelines", description: "Fonts, colors, and brand rules." },
+  { title: "Website UI/UX", description: "Modern UI design in Figma/XD." },
+  { title: "App UI/UX", description: "Mobile UI and flow design." },
+  { title: "Social Media Kit", description: "Templates for posts & ads." },
+  { title: "Rebranding Services", description: "Refresh existing branding." }
 ];
 
 const brandingPackages = [
-  { name: "Logo Starter", price: "RM 400", details: "2 logo concepts, 2 revisions, PNG + vector files." },
-  { name: "Identity Pro", price: "RM 1,200", details: "Logo + color palette + fonts + brand guide PDF." },
-  { name: "UI/UX Suite", price: "RM 2,500", details: "5–7 screens designed, Figma prototype included." }
+  { name: "Logo Starter", price: "RM 400", details: "2 concepts, 2 revisions, PNG + vector." },
+  { name: "Identity Pro", price: "RM 1,200", details: "Logo, fonts, color palette, guide." },
+  { name: "UI/UX Suite", price: "RM 2,500", details: "5–7 screens, Figma prototype." }
 ];
 </script>
 
-
 <style scoped>
-
-
-
 .fade-enter-active,
 .fade-leave-active {
     transition: opacity 0.3s ease;
