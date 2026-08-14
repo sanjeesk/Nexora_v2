@@ -1,87 +1,59 @@
 <template>
-  <div>
+  <div class="pt-20">
     <!-- Hero Section -->
-    <Hero />
-
-    <!-- Services Preview Section -->
-    <section class="section bg-white">
-      <div class="container">
-        <div class="section-title">
-          <h2>Our Services</h2>
-          <p>Comprehensive creative solutions tailored to your needs</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <ServiceCard
-            title="Design Services"
-            description="Stunning visual designs that capture your brand's essence and engage your audience."
-            icon="mdi:palette"
-            :features="['UI/UX Design', 'Branding', 'Marketing Materials']"
-            link="/services/design"
-          />
-          <ServiceCard
-            title="Web Development"
-            description="Fast, responsive, and user-friendly websites built with modern technologies."
-            icon="mdi:code-braces"
-            :features="['Custom Development', 'E-commerce', 'Web Apps']"
-            link="/services/build"
-          />
-          <ServiceCard
-            title="Digital Marketing"
-            description="Data-driven marketing strategies to grow your online presence and drive conversions."
-            icon="mdi:trending-up"
-            :features="['SEO Optimization', 'Social Media', 'Paid Campaigns']"
-            link="/services/marketing"
-          />
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-b from-primary via-primary-dark to-primary relative overflow-hidden">
+      <!-- Gradient overlay -->
+      <div class="absolute inset-0 opacity-50" style="background: radial-gradient(circle at 20% 50%, rgba(0, 188, 212, 0.1) 0%, transparent 50%)"></div>
+      
+      <div class="container relative z-10 text-center">
+        <div class="animate-in">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">
+            Digital Services <span class="text-accent">Built for Growth</span>
+          </h1>
+          <p class="text-lg md:text-xl text-text-light max-w-2xl mx-auto mb-8">
+            Professional web design, development, and digital marketing solutions that drive results for your business.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <NuxtLink to="/contact" class="btn btn-primary">Get Started</NuxtLink>
+            <NuxtLink to="/services" class="btn btn-secondary">Explore Services</NuxtLink>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Featured Portfolio Section -->
-    <section class="section bg-gray-50">
+    <!-- Services Section -->
+    <section class="section bg-primary">
       <div class="container">
-        <div class="section-title">
-          <h2>Featured Work</h2>
-          <p>Showcasing our latest and greatest projects</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <CaseStudyCard
-            title="E-Commerce Platform Redesign"
-            description="Complete redesign and development of a leading e-commerce platform, resulting in 40% increase in conversions."
-            image="/images/case-study-1.jpg"
-            :categories="['Web Design', 'Development']"
-            link="/portfolio/ecommerce-redesign"
-            year="2024"
-            client="Tech Corp"
-          />
-          <CaseStudyCard
-            title="Brand Identity System"
-            description="Comprehensive branding system for a growing fintech startup, including visual identity and guidelines."
-            image="/images/case-study-2.jpg"
-            :categories="['Branding', 'Design']"
-            link="/portfolio/fintech-branding"
-            year="2024"
-            client="FinFlow"
-          />
-        </div>
-
-        <div class="text-center mt-12">
-          <NuxtLink to="/portfolio" class="btn btn-primary">View All Projects</NuxtLink>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white">Our Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="card">
+            <Icon name="mdi:palette" size="48" class="text-accent mb-4" />
+            <h3 class="text-2xl font-bold mb-4 text-white">Web Design</h3>
+            <p class="text-text-light mb-6">Beautiful, modern designs that capture your brand and engage your audience.</p>
+            <NuxtLink to="/services" class="text-accent hover:text-accent-light font-semibold">Learn More →</NuxtLink>
+          </div>
+          <div class="card">
+            <Icon name="mdi:code-braces" size="48" class="text-accent mb-4" />
+            <h3 class="text-2xl font-bold mb-4 text-white">Development</h3>
+            <p class="text-text-light mb-6">Fast, responsive websites and applications built with latest technologies.</p>
+            <NuxtLink to="/services" class="text-accent hover:text-accent-light font-semibold">Learn More →</NuxtLink>
+          </div>
+          <div class="card">
+            <Icon name="mdi:trending-up" size="48" class="text-accent mb-4" />
+            <h3 class="text-2xl font-bold mb-4 text-white">Digital Marketing</h3>
+            <p class="text-text-light mb-6">Data-driven strategies to grow your online presence and drive sales.</p>
+            <NuxtLink to="/services" class="text-accent hover:text-accent-light font-semibold">Learn More →</NuxtLink>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="section bg-white">
-      <div class="container">
-        <div class="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/30 rounded-lg p-12 md:p-16 text-center">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
-          <p class="text-lg text-text-light mb-8 max-w-2xl mx-auto">
-            Let's work together to bring your ideas to life. Get in touch with us today.
-          </p>
-          <NuxtLink to="/contact" class="btn btn-primary">Contact Us Now</NuxtLink>
-        </div>
+    <section class="section bg-gradient-to-r from-primary via-primary-dark to-primary">
+      <div class="container text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Transform Your Digital Presence?</h2>
+        <p class="text-lg text-text-light mb-8 max-w-2xl mx-auto">Let's work together to build something amazing for your business.</p>
+        <NuxtLink to="/contact" class="btn btn-primary btn-lg text-lg px-8 py-4">Start Your Project Today</NuxtLink>
       </div>
     </section>
   </div>
@@ -89,8 +61,8 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Nexora - Digital Services Agency in Malaysia',
-  description: 'Web Development, Branding, and Digital Marketing Services',
+  title: 'Nexora - Digital Services for Business Growth',
+  description: 'Professional web design, development, and digital marketing solutions for Malaysia',
 })
 </script>
 

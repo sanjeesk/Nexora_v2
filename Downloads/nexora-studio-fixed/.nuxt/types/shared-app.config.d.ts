@@ -5,8 +5,8 @@ declare const inlineConfig = {
   "nuxt": {},
   "icon": {
     "provider": "server",
-    "class": "icon",
-    "size": "1em",
+    "class": "",
+    "size": "1.2em",
     "aliases": {},
     "iconifyApiEndpoint": "https://api.iconify.design",
     "localApiEndpoint": "/api/_nuxt_icon",

@@ -9,16 +9,16 @@ import viteNodeEntry_mjs from 'file:///Users/snajeekumar/Downloads/nexora-studio
 import { viteNodeFetch } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/@nuxt/vite-builder/dist/vite-node.mjs';
 import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, decodePath, withLeadingSlash, withoutTrailingSlash, parseQuery, parsePath, encodePath, joinRelativeURL } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/ufo/dist/index.mjs';
 import destr, { destr as destr$1 } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/destr/dist/index.mjs';
-import { createHooks } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/hookable/dist/index.mjs';
+import { createHooks } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/nitropack/node_modules/hookable/dist/index.mjs';
 import { createFetch, Headers as Headers$1 } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/ofetch/dist/node.mjs';
 import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/node-mock-http/dist/index.mjs';
 import { createStorage, prefixStorage } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/unstorage/dist/index.mjs';
 import unstorage_47drivers_47fs from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/unstorage/drivers/fs.mjs';
-import { digest } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/nitropack/node_modules/ohash/dist/index.mjs';
+import { digest, hash as hash$1 } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/ohash/dist/index.mjs';
 import { klona } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/klona/dist/index.mjs';
 import defu, { defuFn } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/defu/dist/defu.mjs';
 import { snakeCase } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/scule/dist/index.mjs';
-import { getContext } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/unctx/dist/index.mjs';
+import { getContext } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/nitropack/node_modules/unctx/dist/index.mjs';
 import { toRouteMatcher, createRouter } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/radix3/dist/index.mjs';
 import { readFile } from 'node:fs/promises';
 import consola, { consola as consola$1 } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/consola/dist/index.mjs';
@@ -29,7 +29,7 @@ import { defineDiagnostics, createConsoleReporter } from 'file:///Users/snajeeku
 import { ansiFormatter } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/nostics/dist/formatters/ansi.mjs';
 import { AsyncLocalStorage } from 'node:async_hooks';
 import { stringify, uneval } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/devalue/index.js';
-import { getContext as getContext$1 } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/@nuxt/nitro-server/node_modules/unctx/dist/index.mjs';
+import { getContext as getContext$1 } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/unctx/dist/index.mjs';
 import { captureRawStackTrace, parseRawStackTrace } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/errx/dist/index.mjs';
 import { isVNode, isRef, toValue } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/vue/index.mjs';
 import _wH6JrtIxmaSoA8lCPWFnE9z4lQeXW6H5z3l5aymEQw from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/@nuxt/vite-builder/dist/fix-stacktrace.mjs';
@@ -37,9 +37,7 @@ import { promises } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname as dirname$1, resolve as resolve$1 } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/pathe/dist/index.mjs';
 import { getIcons } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/@iconify/utils/lib/index.js';
-import { hash as hash$1 } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/@nuxt/icon/node_modules/ohash/dist/index.mjs';
 import { collections } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/.nuxt/nuxt-icon-server-bundle.mjs';
-import { hash as hash$2 } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/@nuxt/nitro-server/node_modules/ohash/dist/index.mjs';
 import { createRenderer, getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import { renderToString } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/vue/server-renderer/index.mjs';
 import { createHead as createHead$1, propsToString, renderSSRHead } from 'file:///Users/snajeekumar/Downloads/nexora-studio-fixed/node_modules/unhead/dist/server.mjs';
@@ -2088,7 +2086,7 @@ const serverDiagnostics = /* #__PURE__ */ defineDiagnostics({
 	}
 });
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"},{"name":"description","content":"Nexora - Premium Digital Services including Web Design, Development, Branding & Digital Marketing"}],"link":[{"rel":"icon","type":"image/svg+xml","href":"data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><text y=\"75\" font-size=\"75\" font-weight=\"bold\" fill=\"%230052CC\">N</text></svg>"}],"style":[],"script":[],"noscript":[],"charset":"utf-8","viewport":"width=device-width, initial-scale=1"};
+const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[],"charset":"utf-8","viewport":"width=device-width, initial-scale=1","titleTemplate":"%s | Nexora"};
 
 const appRootTag = "div";
 
@@ -2369,7 +2367,7 @@ function filterIslandProps(props) {
 */
 function getIslandHash(input) {
 	const props = typeof input.props === "string" ? parseSerializedProps(input.props) : input.props ?? {};
-	return hash$2([
+	return hash$1([
 		input.name,
 		props,
 		input.context ?? {},

@@ -28,6 +28,8 @@ declare module "#build/test-component-wrapper.mjs";
 declare module "#build/test-component-wrapper";
 declare module "#build/devtools/settings.mjs";
 declare module "#build/devtools/settings";
+declare module "#build/runtime.vue-devtools-client.tYOOheeWCQXipemPNKrnVz57PW_BaVpduKtjTOsS76M.js";
+declare module "#build/runtime.vue-devtools-client.tYOOheeWCQXipemPNKrnVz57PW_BaVpduKtjTOsS76M";
 declare module "#build/routes.mjs";
 declare module "#build/routes";
 declare module "#build/pages.mjs";
